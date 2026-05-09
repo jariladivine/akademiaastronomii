@@ -3,65 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Akademia Astronomii - galeria kosmiczna. Zobacz zdjęcia planet, mgławic i galaktyk.">
     <title>Akademia Astronomii - Galeria</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- MGŁAWICE: NAKŁADKA (OVERLAY) --- */
-        .nebula-container {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-        .nebula-container img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-        .nebula-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6); /* Ciemna warstwa półprzezroczysta */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
-            color: #fff;
-        }
-
-        /* --- FAKTY: SIATKA 2 KOLUMNY + PEŁNA SZEROKOŚĆ --- */
-        .facts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        .fact-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-        }
-        .fact-full-width {
-            grid-column: 1 / -1; /* Trzeci blok zajmuje pełną szerokość */
-        }
-
-        /* --- KOLORY KOSMOSU: KAFLE --- */
+        /* --- KOLORY KOSMOSU: KAFLE JAKO PRZYCISKI --- */
         .color-tiles-container {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
             margin-top: 1rem;
         }
+
         .color-tile {
             width: 100px;
             height: 100px;
             border-radius: 12px;
             display: flex;
-            align-items: flex-end; /* Wyrównanie do dołu */
+            align-items: flex-end; /* Wyrównanie tekstu do dołu */
             justify-content: center;
             padding: 10px;
             font-size: 0.7rem;
@@ -70,18 +28,64 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
             border: 2px solid rgba(255,255,255,0.1);
             text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
         }
 
-        /* --- KATEGORIE ZDJĘĆ: INLINE-BLOCK --- */
-        .category-item {
+        .color-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* --- KATEGORIE ZDJĘĆ: PRZYCISKI INLINE-BLOCK --- */
+        .category-buttons-container {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .category-btn {
             display: inline-block;
             width: 150px;
-            padding: 1rem;
+            padding: 0.8rem;
+            margin: 8px;
             text-align: center;
             background: rgba(253, 121, 168, 0.2);
+            border: 1px solid rgba(253, 121, 168, 0.3);
             border-radius: 4px;
-            margin: 5px;
             color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-btn:hover {
+            background: rgba(253, 121, 168, 0.4);
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        /* Styl dla nakładek mgławic (Overlay) */
+        .nebula-container {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .nebula-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            color: #fff;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -104,69 +108,31 @@
         <section class="hero-box">
             <div class="hero-content">
                 <h1>Galeria kosmiczna</h1>
-                <p>Najpiękniejsze zdjęcia wszechświata w wysokiej rozdzielczości.</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-header"><h2>Mgławice</h2></div>
-            <div class="grid-container">
-                <div class="nebula-container">
-                    <img src="https://picsum.photos/seed/nebula1/600/400" alt="Mgławica Oriona">
-                    <div class="nebula-overlay">
-                        <h3>Mgławica Oriona (M42)</h3>
-                        <p>Jedna z najjaśniejszych mgławic, widoczna gołym okiem.</p>
-                    </div>
-                </div>
-                <div class="nebula-container">
-                    <img src="https://picsum.photos/seed/nebula2/600/400" alt="Mgławica Krab">
-                    <div class="nebula-overlay">
-                        <h3>Mgławica Krab (M1)</h3>
-                        <p>Pozostałość po supernowej zaobserwowanej w 1054 roku.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-header"><h2>Fakty o wszechświecie</h2></div>
-            <div class="facts-grid">
-                <div class="fact-item">
-                    <h4>🌍 Wiek Ziemi</h4>
-                    <p>4,54 miliarda lat</p>
-                </div>
-                <div class="fact-item">
-                    <h4>☀️ Wiek Słońca</h4>
-                    <p>4,6 miliarda lat</p>
-                </div>
-                <div class="fact-item fact-full-width">
-                    <h4>🌌 Wiek wszechświata</h4>
-                    <p>13,8 miliarda lat — od Wielkiego Wybuchu do dziś. Jest to czas mierzony od momentu gwałtownej ekspansji materii i energii.</p>
-                </div>
+                <p>Eksploruj wszechświat poprzez barwy i kategorie.</p>
             </div>
         </section>
 
         <section>
             <div class="section-header"><h2>Kolory kosmosu</h2></div>
-            <p>Kosmos jest pełen barw — od czerwieni mgławic po błękit gorących gwiazd.</p>
+            <p>Kliknij kolor, aby filtrować zdjęcia według dominującej barwy:</p>
             <div class="color-tiles-container">
-                <div class="color-tile" style="background-color: #c0392b;">Supernowa</div>
-                <div class="color-tile" style="background-color: rgb(41, 128, 185);">Gwiazda B</div>
-                <div class="color-tile" style="background-color: rgba(155, 89, 182, 0.8);">Mgławica</div>
-                <div class="color-tile" style="background-color: hsl(45, 100%, 51%);">Słońce</div>
-                <div class="color-tile" style="background-color: coral;">Mars</div>
+                <a href="#" class="color-tile" style="background-color: #c0392b;">Supernowa</a>
+                <a href="#" class="color-tile" style="background-color: rgb(41, 128, 185);">Gwiazda B</a>
+                <a href="#" class="color-tile" style="background-color: rgba(155, 89, 182, 0.8);">Mgławica</a>
+                <a href="#" class="color-tile" style="background-color: hsl(45, 100%, 51%);">Słońce</a>
+                <a href="#" class="color-tile" style="background-color: coral;">Mars</a>
             </div>
         </section>
 
         <section>
             <div class="section-header"><h2>Kategorie zdjęć</h2></div>
-            <div style="text-align: center;">
-                <div class="category-item">🪐 Planety</div>
-                <div class="category-item">⭐ Gwiazdy</div>
-                <div class="category-item">🌌 Mgławice</div>
-                <div class="category-item">🔭 Galaktyki</div>
-                <div class="category-item">🌙 Księżyce</div>
-                <div class="category-item">☄️ Komety</div>
+            <div class="category-buttons-container">
+                <a href="#planety" class="category-btn">🪐 Planety</a>
+                <a href="#gwiazdy" class="category-btn">⭐ Gwiazdy</a>
+                <a href="#mglawice" class="category-btn">🌌 Mgławice</a>
+                <a href="#galaktyki" class="category-btn">🔭 Galaktyki</a>
+                <a href="#ksiezyce" class="category-btn">🌙 Księżyce</a>
+                <a href="#komety" class="category-btn">☄️ Komety</a>
             </div>
         </section>
     </main>
