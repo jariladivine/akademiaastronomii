@@ -2,14 +2,14 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <meta name="description" content="Akademia Astronomii - odkryj tajemnice kosmosu. Kursy, artykuły i galeria zdjęć.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Akademia Astronomii - galeria kosmiczna. Zobacz zdjęcia planet, mgławic i galaktyk.">
     <title>Akademia Astronomii - Galeria</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
+    <header>
         <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
         <nav>
             <ul class="nav-links">
@@ -22,111 +22,101 @@
         </nav>
     </header>
 
-  <main>
-      <section class="hero-box">
+    <main>
+        <section class="hero-box">
             <div class="hero-content">
-                <h1>Galeria kosmiczna</h1></h1>
-                <p>Najpiękniejsze zdjęcia planet, mgławic, galaktyk i nocnego nieba. Kliknij i podziwiaj piękno wszechświata</p>
+                <h1>Galeria kosmiczna</h1>
+                <p>Najpiękniejsze zdjęcia planet, mgławic, galaktyk i nocnego nieba. Podziwiaj piękno wszechświata.</p>
             </div>
         </section>
 
-    <section>
-      <div>
-        <h2>Planety</h2>
-      </div>
-      <div>
-        <div>
-          <img src="https://picsum.photos/seed/mars/600/300" alt="Mars">
-          <h3>Mars</h3>
-          <p>Czerwona Planeta — czwarta od Słońca. Posiada najwyższy wulkan w Układzie Słonecznym — Olympus Mons (21,9 km).</p>
-        </div>
-        <div>
-          <img src="https://picsum.photos/seed/jupiter/600/300" alt="Jowisz">
-          <h3>Jowisz</h3>
-          <p>Największa planeta — jej masa to 318 razy masa Ziemi. Wielka Czerwona Plama to burza trwająca od ponad 350 lat.</p>
-        </div>
-        <div>
-          <img src="https://picsum.photos/seed/saturn/600/300" alt="Saturn">
-          <h3>Saturn</h3>
-          <p>Znany z pięknych pierścieni złożonych z lodu i skał. Posiada 146 potwierdzonych księżyców, w tym Tytana z atmosferą.</p>
-        </div>
-      </div>
-    </section>
+        <section aria-labelledby="planets-title">
+            <div class="section-header">
+                <h2 id="planets-title">Planety</h2>
+            </div>
+            <div class="grid-container">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/mars/600/400" alt="Mars">
+                    <h3>Mars</h3>
+                    <p>Czerwona Planeta — posiada najwyższy wulkan w Układzie Słonecznym — Olympus Mons (21,9 km).</p>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/jupiter/600/400" alt="Jowisz">
+                    <h3>Jowisz</h3>
+                    <p>Największa planeta — jej masa to 318 razy masa Ziemi. Wielka Czerwona Plama to burza trwająca od wieków.</p>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/saturn/600/400" alt="Saturn">
+                    <h3>Saturn</h3>
+                    <p>Znany z pięknych pierścieni złożonych z lodu i skał. Posiada aż 146 potwierdzonych księżyców.</p>
+                </article>
+            </div>
+        </section>
 
-    <section>
-      <div>
-        <h2>Mgławice</h2>
-      </div>
-      <div>
-        <div>
-          <div>
-            <img src="https://picsum.photos/seed/nebula1/600/300" alt="Mgławica Oriona">
-            <div>Mgławica Oriona (M42)</div>
-          </div>
-          <p>Jedna z najjaśniejszych mgławic, widoczna gołym okiem. Oddalona o 1344 lata świetlne.</p>
-        </div>
-        <div>
-          <div>
-            <img src="https://picsum.photos/seed/nebula2/600/300" alt="Mgławica Krab">
-            <div>Mgławica Krab (M1)</div>
-          </div>
-          <p>Pozostałość po supernowej zaobserwowanej w 1054 roku. W jej centrum znajduje się pulsar.</p>
-        </div>
-      </div>
-    </section>
+        <section aria-labelledby="nebulae-title">
+            <div class="section-header">
+                <h2 id="nebulae-title">Mgławice</h2>
+            </div>
+            <div class="grid-container">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/nebula1/600/400" alt="Mgławica Oriona">
+                    <h3>Mgławica Oriona (M42)</h3>
+                    <p>Jedna z najjaśniejszych mgławic, widoczna gołym okiem. Miejsce narodzin setek gwiazd.</p>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/nebula2/600/400" alt="Mgławica Krab">
+                    <h3>Mgławica Krab (M1)</h3>
+                    <p>Pozostałość po supernowej z 1054 roku. W jej samym centrum znajduje się gęsty pulsar.</p>
+                </article>
+            </div>
+        </section>
 
-    <section>
-      <div>
-        <h2>Fakty o wszechświecie</h2>
-      </div>
-      <div>
-        <div>
-          <h4>🌍 Wiek Ziemi</h4>
-          <p>4,54 miliarda lat</p>
+        <section aria-labelledby="facts-title">
+            <div class="section-header">
+                <h2 id="facts-title">Fakty o wszechświecie</h2>
+            </div>
+            <div class="table-wrapper">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Obiekt</th>
+                            <th>Wiek / Parametr</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>🌍 Ziemia</td><td>4,54 miliarda lat</td></tr>
+                        <tr><td>☀️ Słońce</td><td>4,6 miliarda lat</td></tr>
+                        <tr><td>🌌 Wszechświat</td><td>13,8 miliarda lat</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="section-header"><h2>Kolory kosmosu</h2></div>
+            <p class="dropcap">Kosmos jest pełen barw — od czerwieni mgławic po błękit gorących gwiazd. Każdy kolor mówi nam o temperaturze i składzie chemicznym obiektu.</p>
+            <div class="banner-subtle">
+                ✨ Supernowa · Gwiazda B · Mgławica · Słońce · Mars
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <div class="section-header"><h2>Kategorie zdjęć</h2></div>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+                <span class="btn btn--more">🪐 Planety</span>
+                <span class="btn btn--more">⭐ Gwiazdy</span>
+                <span class="btn btn--more">🌌 Mgławice</span>
+                <span class="btn btn--more">🔭 Galaktyki</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
+        <div class="footer-links">
+            <a href="kursy.html">← Kursy</a> · <a href="index.html">Strona Główna</a> · <a href="kontakt.html">Kontakt →</a>
         </div>
-        <div>
-          <h4>☀️ Wiek Słońca</h4>
-          <p>4,6 miliarda lat</p>
-        </div>
-        <div>
-          <h4>🌌 Wiek wszechświata</h4>
-          <p>13,8 miliarda lat — od Wielkiego Wybuchu do dziś</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div>
-        <h2>Kolory kosmosu</h2>
-      </div>
-      <p>Kosmos jest pełen barw — od czerwieni mgławic po błękit gorących gwiazd. Oto paleta kosmicznych kolorów:</p>
-      <div>
-        <div>Supernowa</div>
-        <div>Gwiazda B</div>
-        <div>Mgławica</div>
-        <div>Słońce</div>
-        <div>Mars</div>
-      </div>
-    </section>
-
-    <section>
-      <div>
-        <h2>Kategorie zdjęć</h2>
-      </div>
-      <div>🪐 Planety</div>
-      <div>⭐ Gwiazdy</div>
-      <div>🌌 Mgławice</div>
-      <div>🔭 Galaktyki</div>
-      <div>🌙 Księżyce</div>
-      <div>☄️ Komety</div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
-    <p><a href="kursy.html">← Kursy</a> · <a href="kontakt.html">Kontakt →</a></p>
-  </footer>
+    </footer>
 
 </body>
 </html>
