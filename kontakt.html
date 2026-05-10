@@ -89,6 +89,20 @@
         section {
             margin-bottom: 4rem;
         }
+      .grid-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
 
         .section-header {
             border-left: 4px solid var(--primary-color);
@@ -111,14 +125,13 @@
         }
 
         .hero-box h1 {
-            color: #e8e8e8;
+            color: #fff;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-
         /* --- INTEGRACJA STYLI SPECYFICZNYCH DLA KONTAKTU --- */
         
-        /* Formularz */
+        /* --- FORMULARZ --- */
         .contact-form-group {
             margin-bottom: 1.2rem;
             text-align: left;
@@ -140,28 +153,32 @@
             color: #fff;
             border-radius: 8px;
             font-family: inherit;
+            transition: border-color var(--transition-speed);
         }
 
         .contact-form-group input:focus, 
         .contact-form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(108, 92, 231, 0.3);
         }
 
-        .contact-form-group textarea {
-            min-height: 120px;
-            resize: vertical;
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
-        /* Lista danych kontaktowych */
-        .contact-details-list h3 {
-            margin-top: 0;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+        .btn:hover {
+            background-color: #5b4bc4;
+            transform: translateY(-2px);
         }
 
+        /* --- KONTAKT INFO --- */
         .contact-item {
             position: relative;
             padding: 0.8rem 1rem 0.8rem 2.5rem;
@@ -177,6 +194,14 @@
             position: absolute;
             left: 1rem;
             color: var(--secondary-color);
+        }
+
+        .contact-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
         /* Mapa Demo */
