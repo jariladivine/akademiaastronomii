@@ -88,36 +88,31 @@
         .map-box-3 { position: absolute; bottom: 20px; right: 20px; background: var(--accent-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
 
         /* Społeczność */
-        .social-promo-text {
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .benefits-container {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 1rem;
         }
 
-        .social-card {
-            background: var(--card-bg);
-            padding: 1.2rem;
-            text-align: center;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-speed);
+        .benefit-tile {
+            display: inline-block;
+            background-color: var(--primary-color); /* Zachowany kolor bazowy */
+            color: white;
+            padding: 0.7rem 1.8rem; /* Rozmiar jak w .level-btn */
+            border-radius: 50px;     /* Kształt pigułki jak w .level-btn */
             font-weight: 600;
+            cursor: default;
+            transition: transform 0.2s ease, filter 0.2s ease, background-color 0.3s ease;
+            border: none;
         }
 
-        .social-card:hover {
-            border-color: var(--secondary-color);
-            background: rgba(0, 206, 201, 0.05);
-            transform: translateY(-3px);
-        }
+        .benefit-tile:hover {
+            transform: translateY(-3px); /* Efekt uniesienia jak w .level-btn */
+            filter: brightness(1.2);      /* Efekt rozjaśnienia jak w .level-btn */
+            background-color: var(--accent-color); /* Subtelna zmiana koloru przy hoverze */
 
         /* Banner animowany */
         .newsletter-banner {
@@ -235,12 +230,12 @@
             <div class="section-header">
                 <h2>Dołącz do społeczności</h2>
             </div>
-            <p class="social-promo-text">Odkrywaj kosmos razem z nami w sieci</p>
-            <div class="social-grid">
-                <div class="social-card" style="border-bottom: 3px solid #1877F2;">Facebook</div>
-                <div class="social-card" style="border-bottom: 3px solid #E4405F;">Instagram</div>
-                <div class="social-card" style="border-bottom: 3px solid #1DA1F2;">Twitter</div>
-                <div class="social-card" style="border-bottom: 3px solid #FF0000;">YouTube</div>
+            <p style="text-align: center;">Odkrywaj kosmos razem z nami w sieci</p>
+            <div class="benefits-container">
+                <div class="benefit-tile">Facebook</div>
+                <div class="benefit-tile">Instagram</div>
+                <div class="benefit-tile">Twitter</div>
+                <div class="benefit-tile">YouTube</div>
             </div>
         </section>
 
