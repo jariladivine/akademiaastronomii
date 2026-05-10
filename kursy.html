@@ -1,12 +1,12 @@
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Akademia Astronomii - galeria. Zobacz zdjęcia planet, mgławic i galaktyk.">
-    <title>Akademia Astronomii - Galeria</title>
+    <meta name="description" content="Akademia Astronomii - nasze kursy. Wybierz poziom i zacznij przygodę z kosmosem.">
+    <title>Akademia Astronomii - Kursy</title>
     <style>
-        /* --- IMPORT PODSTAWOWYCH ZMIENNYCH --- */
-         :root {
+        :root {
             --primary-color: #6c5ce7;      /* Fiolet */
             --secondary-color: #00cec9;    /* Turkus */
             --accent-color: #fd79a8;       /* Różowy */
@@ -22,7 +22,7 @@
             --transition-speed: 0.3s;
         }
 
-        /* --- RESET I BAZA --- */
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -38,7 +38,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NAGŁÓWEK (UJEDNOLICONY) --- */
+        /* --- NAGŁÓWEK --- */
         header {
             position: sticky;
             top: 0;
@@ -78,7 +78,11 @@
             background-color: var(--primary-color);
             color: #fff;
         }
-      
+
+        /* --- TYPOGRAFIA --- */
+        h1, h2, h3 { color: var(--heading-color); margin-bottom: 0.5em; }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
 
         /* --- UKŁAD GŁÓWNY --- */
         main {
@@ -87,8 +91,12 @@
             padding: 2rem 1.5rem;
         }
 
-        section {
-            margin-bottom: 4rem;
+        section { margin-bottom: 4rem; }
+
+        .section-header {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         /* --- HERO --- */
@@ -113,8 +121,7 @@
             color: rgba(255,255,255,0.9);
         }
 
-
-        /* --- POZIOMY KURSÓW (PRZYCISKI) --- */
+        /* --- FILTRY / PRZYCISKI POZIOMÓW --- */
         .levels-container {
             display: flex;
             justify-content: center;
@@ -134,47 +141,92 @@
             border: none;
             cursor: pointer;
             transition: transform 0.2s ease, filter 0.2s ease;
-            font-family: inherit;
         }
 
-        .level-btn:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.2);
-        }
-
+        .level-btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
         .level-btn:nth-child(1) { background-color: var(--primary-color); }
         .level-btn:nth-child(2) { background-color: var(--secondary-color); }
         .level-btn:nth-child(3) { background-color: var(--accent-color); }
 
-        /* --- CO ZYSKUJESZ? --- */
-        .benefits-container {
-            text-align: center;
+        /* --- SIATKA KART --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: transform var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .card p { flex-grow: 1; margin-bottom: 1rem; }
+
+        /* --- PRZYCISKI --- */
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-speed);
+            text-align: center;
+            border: none;
+        }
+
+        .btn--cta { background: var(--secondary-color); color: var(--dark-bg); }
+        .btn--more { background: var(--primary-color); color: #fff; }
+        .btn:hover { transform: scale(1.03); }
+
+        /* --- TABELA --- */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            border: 2px solid var(--heading-color);
+            box-shadow: var(--shadow);
+        }
+
+        .styled-table { width: 100%; border-collapse: collapse; background: var(--card-bg); min-width: 500px; }
+        .styled-table th { background: var(--heading-color); color: var(--dark-bg); padding: 1rem; text-align: left; text-transform: uppercase; font-size: 0.9rem; }
+        .styled-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
+
+        /* --- KAFELKI KORZYŚCI --- */
+        .benefits-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .benefit-tile {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
+            background: var(--primary-color);
+            color: #fff;
             padding: 0.7rem 1.8rem;
             border-radius: 50px;
             font-weight: 600;
-            cursor: default;
-            transition: transform 0.2s ease, filter 0.2s ease, background-color 0.3s ease;
-            border: none;
+            transition: 0.3s;
         }
+        .benefit-tile:hover { background: var(--accent-color); transform: translateY(-3px); }
 
-        .benefit-tile:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.2);
-            background-color: var(--accent-color);
-        }
-
-        /* --- WYRÓŻNIONE KOŃCOWE CTA --- */
+        /* --- PULSUJĄCE CTA --- */
         .cta-section {
             text-align: center;
             padding: 4rem 1rem;
@@ -182,19 +234,13 @@
             background-size: cover;
             background-position: center;
             border-radius: var(--radius);
-            margin: 3rem 0;
-            color: white;
-        }
-
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 1.5rem;
+            color: #fff;
         }
 
         .cta-pulse {
             display: inline-block;
-            font-size: 1.4rem;
-            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            padding: 1.2rem 2.5rem;
             background-color: var(--accent-color);
             color: white;
             border-radius: 50px;
@@ -202,6 +248,7 @@
             text-decoration: none;
             font-weight: bold;
             box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+            margin-top: 1rem;
         }
 
         @keyframes pulse {
@@ -210,30 +257,17 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
         }
 
-        .table-wrapper {
-            margin: 2rem 0;
-            border-radius: var(--radius);
-            overflow-x: auto;
-            border: 2px solid var(--heading-color);
-            box-shadow: var(--shadow);
-        }
+        /* --- STOPKA --- */
+        footer { text-align: center; padding: 3rem 1.5rem; background: var(--card-bg); border-top: 1px solid var(--border-color); }
+        footer p { color: var(--text-muted); }
+        .footer-links { margin-top: 1rem; }
+        .footer-links a { color: var(--heading-color); text-decoration: none; margin: 0 10px; }
 
-        .styled-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--card-bg);
-            min-width: 500px;
+        /* --- RESPONSYWNOŚĆ --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 1rem; }
+            .nav-links { margin-top: 1rem; font-size: 0.9rem; }
         }
-
-        .styled-table th {
-            background: var(--heading-color);
-            color: var(--dark-bg);
-            padding: 1rem;
-            text-align: left;
-            text-transform: uppercase;
-        }
-
-        .styled-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
     </style>
 </head>
 <body>
@@ -252,15 +286,17 @@
     </header>
 
     <main>
+        <!-- Sekcja Hero -->
         <section class="hero-box">
             <div class="hero-content">
-                <h1>Nasze kursy</h1>
+                <h1>Nasze Kursy</h1>
                 <p>Wybierz kurs dopasowany do Twojego poziomu — od podstaw astronomii po zaawansowaną astrofotografię.</p>
             </div>
         </section>
 
+        <!-- Wybór poziomu -->
         <section>
-            <div class="section-header"><h2>Poziomy kursów</h2></div>
+            <div class="section-header"><h2>Poziomy trudności</h2></div>
             <div class="levels-container">
                 <button class="level-btn">🌟 Początkujący</button>
                 <button class="level-btn">🔭 Średniozaawansowany</button>
@@ -268,11 +304,12 @@
             </div>
         </section>
 
+        <!-- Lista Kursów -->
         <section>
-            <div class="section-header"><h2>Oferta kursów</h2></div>
+            <div class="section-header"><h2>Dostępne programy</h2></div>
             <div class="grid-container">
                 <article class="card">
-                    <img src="https://picsum.photos/seed/solarsystem/600/350" alt="Układ Słoneczny" class="card-image">
+                    <img src="https://picsum.photos/seed/solarsystem/600/350" alt="Układ Słoneczny">
                     <h3>Układ Słoneczny</h3>
                     <p>Poznaj planety, księżyce i pas asteroidów. Kurs idealny na start przygody z astronomią.</p>
                     <p><strong>Czas trwania:</strong> 8 tygodni</p>
@@ -280,7 +317,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="https://picsum.photos/seed/constellations/600/350" alt="Konstelacje" class="card-image">
+                    <img src="https://picsum.photos/seed/constellations/600/350" alt="Gwiazdy">
                     <h3>Gwiazdy i konstelacje</h3>
                     <p>Naucz się rozpoznawać gwiazdozbiory i zrozum cykl życia gwiazd — od mgławicy po czarną dziurę.</p>
                     <p><strong>Czas trwania:</strong> 10 tygodni</p>
@@ -288,7 +325,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="https://picsum.photos/seed/deepspace/600/350" alt="Głęboki kosmos" class="card-image">
+                    <img src="https://picsum.photos/seed/deepspace/600/350" alt="Galaktyki">
                     <h3>Galaktyki i kosmologia</h3>
                     <p>Ciemna materia, Wielki Wybuch i ekspansja wszechświata — zanurz się w tajemnice fizyki.</p>
                     <p><strong>Czas trwania:</strong> 12 tygodni</p>
@@ -296,7 +333,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="https://picsum.photos/seed/astrophoto/600/350" alt="Astrofotografia" class="card-image">
+                    <img src="https://picsum.photos/seed/astrophoto/600/350" alt="Astrofotografia">
                     <h3>Astrofotografia</h3>
                     <p>Naucz się fotografować nocne niebo — od smartfona po zaawansowane techniki z teleskopem.</p>
                     <p><strong>Czas trwania:</strong> 6 tygodni</p>
@@ -305,6 +342,7 @@
             </div>
         </section>
 
+        <!-- Harmonogram -->
         <section>
             <div class="section-header"><h2>Harmonogram zajęć</h2></div>
             <div class="table-wrapper">
@@ -327,32 +365,30 @@
             </div>
         </section>
 
+        <!-- Korzyści -->
         <section>
             <div class="section-header"><h2>Co zyskujesz?</h2></div>
-            <p style="text-align: center;">Odkryj korzyści płynące z dołączenia do naszej społeczności:</p>
+            <p style="text-align: center;">Dołączając do naszej akademii, otrzymujesz nie tylko wiedzę:</p>
             <div class="benefits-container">
-                <div class="benefit-tile">📚 Materiały</div>
+                <div class="benefit-tile">📚 Materiały PDF</div>
                 <div class="benefit-tile">🎓 Certyfikat</div>
-                <div class="benefit-tile">🔭 Obserwacje</div>
-                <div class="benefit-tile">👥 Społeczność</div>
+                <div class="benefit-tile">🔭 Sesje obserwacyjne</div>
+                <div class="benefit-tile">👥 Zamknięta grupa</div>
             </div>
         </section>
 
+        <!-- Sekcja CTA -->
         <section class="cta-section">
             <h2>Gotowy na podróż w nieznane?</h2>
-            <p>Dołącz do setek pasjonatów nieba i zacznij swoją przygodę już dziś.</p><br>
+            <p>Dołącz do setek pasjonatów nieba i zacznij swoją przygodę już dziś.</p>
             <a href="kontakt.html" class="cta-pulse">📩 Zapisz się na kurs teraz!</a>
         </section>
-
     </main>
 
     <footer>
         <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
-            <a href="o-nas.html">O nas</a> · 
-            <a href="kursy.html">Kursy</a> · 
-            <a href="galeria.html">Galeria</a> · 
-            <a href="kontakt.html">Kontakt</a>
+            <a href="o-nas.html">O nas</a> · <a href="kursy.html">Kursy</a> · <a href="galeria.html">Galeria</a> · <a href="kontakt.html">Kontakt</a>
         </div>
     </footer>
 
