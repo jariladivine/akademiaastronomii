@@ -103,34 +103,30 @@
 
         /* --- HERO --- */
         .hero-box {
-            text-align: center; 
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: var(--radius); 
-            color: #ffffff; 
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-        }
+    text-align: center; 
+    padding: 5rem 1rem; /* Zwiększony padding dla lepszego efektu */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius); 
+    color: #fff; 
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+}
 
-        .hero-box h1 {
-            color: #ffffff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            margin: 0;
-            line-height: 1.2;
-        }
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsywna wielkość czcionki */
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
 
-        .hero-box p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            max-width: 700px;
-            opacity: 0.95;
-            margin: 0;
-        }
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    max-width: 700px;
+    margin: 0 auto 2rem auto; /* Wyśrodkowanie tekstu i margines pod nim */
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+}
 
         /* --- TREŚĆ --- */
         .mission-text::first-line { font-weight: 700; color: var(--secondary-color); }
@@ -198,8 +194,10 @@
 
     <main>
         <section class="hero-box">
+              <div class="hero-content">
             <h1>O Akademii Astronomii</h1>
             <p>Jesteśmy zespołem pasjonatów, których połączył kosmos i chęć dzielenia się wiedzą.</p>
+          </div>
         </section>
 
         <section>
