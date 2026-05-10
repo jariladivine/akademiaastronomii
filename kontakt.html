@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Akademii Astronomii - nasz zespół, misja i historia. Edukacja astronomiczna dla wszystkich.">
+    <meta name="description" content="Skontaktuj się z Akademią Astronomii. Formularz kontaktowy, dane adresowe i lokalizacja obserwatorium.">
     <title>Akademia Astronomii - Kontakt</title>
     <style>
         :root {
@@ -89,7 +89,8 @@
         section {
             margin-bottom: 4rem;
         }
-      .grid-container {
+
+        .grid-container {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 2rem;
@@ -114,7 +115,9 @@
             color: var(--heading-color);
             margin-bottom: 0.5em;
         }
-.hero-box {
+
+        /* --- HERO (UJEDNOLICONY) --- */
+        .hero-box {
             text-align: center; 
             padding: 4rem 1rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -125,12 +128,19 @@
         }
 
         .hero-box h1 {
-            color: #fff;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 0.5rem;
         }
 
-        /* --- INTEGRACJA STYLI SPECYFICZNYCH DLA KONTAKTU --- */
-        
+        .hero-box p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+        }
+
         /* --- FORMULARZ --- */
         .contact-form-group {
             margin-bottom: 1.2rem;
@@ -156,6 +166,11 @@
             transition: border-color var(--transition-speed);
         }
 
+        .contact-form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
         .contact-form-group input:focus, 
         .contact-form-group textarea:focus {
             outline: none;
@@ -171,6 +186,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
+            font-size: 1rem;
         }
 
         .btn:hover {
@@ -198,10 +214,11 @@
 
         .contact-img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
             margin-top: 1rem;
+            border: 1px solid var(--border-color);
         }
 
         /* Mapa Demo */
@@ -238,14 +255,13 @@
             padding: 0.7rem 1.8rem;
             border-radius: 50px;
             font-weight: 600;
-            cursor: default;
-            transition: transform 0.2s ease, filter 0.2s ease, background-color 0.3s ease;
-            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            text-decoration: none;
         }
 
         .benefit-tile:hover {
             transform: translateY(-3px);
-            filter: brightness(1.2);
             background-color: var(--accent-color);
         }
 
@@ -270,15 +286,8 @@
             100% { background-position: 0% 50%; }
         }
 
-        .contact-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-top: 1rem;
-            border: 1px solid var(--border-color);
-        }
-      footer {
+        /* --- STOPKA --- */
+        footer {
             text-align: center;
             padding: 3rem 1.5rem;
             background: var(--card-bg);
@@ -304,27 +313,26 @@
         .footer-links a:hover {
             color: var(--primary-color);
         }
-      
-      /* --- RESPONSYWNOŚĆ --- */
+
+        /* --- RESPONSYWNOŚĆ --- */
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 1rem; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.5rem; }
-            .form-container { padding: 1.5rem; }
-            .quote-section { height: 200px; }
+            .grid-container { grid-template-columns: 1fr; }
+            .map-box-2 { margin-left: 0; }
         }
 
         @media (max-width: 480px) {
-            main { padding: 1rem 0.5rem; }
-            .grid-container { grid-template-columns: 1fr; }
-          
-          
+            main { padding: 1rem 0.8rem; }
+            .hero-box { padding: 3rem 1rem; }
+            .hero-box h1 { font-size: 1.8rem; }
+            .card { padding: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-         <header>
+    <header>
         <div class="service-name">🔭 Akademia Astronomii</div>
         <nav>
             <ul class="nav-links">
@@ -338,10 +346,11 @@
     </header>
 
     <main>
- <section class="hero-box">
+        <section class="hero-box">
             <h1>Skontaktuj się z nami</h1>
             <p>Masz pytania o kursy, obserwacje lub współpracę? Napisz do nas — odpowiadamy w ciągu 24 godzin!</p>
         </section>
+
         <section>
             <div class="section-header">
                 <h2>Formularz i Dane</h2>
@@ -367,7 +376,7 @@
                             <label for="contact-message">Wiadomość</label>
                             <textarea id="contact-message" placeholder="W czym możemy pomóc?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn--more" style="width: 100%; margin-top: 1rem;">Wyślij wiadomość 📩</button>
+                        <button type="submit" class="btn" style="width: 100%;">Wyślij wiadomość 📩</button>
                     </form>
                 </article>
 
@@ -405,12 +414,12 @@
             <div class="section-header">
                 <h2>Dołącz do społeczności</h2>
             </div>
-            <p style="text-align: center;">Odkrywaj kosmos razem z nami w sieci</p>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Odkrywaj kosmos razem z nami w sieci</p>
             <div class="benefits-container">
-                <div class="benefit-tile">Facebook</div>
-                <div class="benefit-tile">Instagram</div>
-                <div class="benefit-tile">Twitter</div>
-                <div class="benefit-tile">YouTube</div>
+                <a href="#" class="benefit-tile">Facebook</a>
+                <a href="#" class="benefit-tile">Instagram</a>
+                <a href="#" class="benefit-tile">Twitter</a>
+                <a href="#" class="benefit-tile">YouTube</a>
             </div>
         </section>
 
