@@ -123,15 +123,63 @@
             </div>
         </section>
 
-        <section>
-            <div class="section-header"><h2>Poziomy zaawansowania</h2></div>
-            <div class="levels-container">
-                <div class="level-pill">🌟 Początkujący</div>
-                <div class="level-pill">🔭 Średniozaawansowany</div>
-                <div class="level-pill">🚀 Zaawansowany</div>
-            </div>
-        </section>
+       <style>
+    /* --- ZAKTUALIZOWANE PRZYCISKI POZIOMÓW --- */
+    .levels-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+    }
 
+    .level-btn {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: all var(--transition-speed);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Kolory przycisków z efektem hover */
+    .level-btn:nth-child(1) { background-color: var(--primary-color); }
+    .level-btn:nth-child(2) { background-color: var(--secondary-color); color: var(--dark-bg); }
+    .level-btn:nth-child(3) { background-color: var(--accent-color); }
+
+    .level-btn:hover {
+        transform: translateY(-5px);
+        filter: brightness(1.2);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .level-btn:active {
+        transform: translateY(0);
+    }
+</style>
+
+<!-- Fragment w sekcji <main> -->
+<section>
+    <div class="section-header"><h2>Wybierz swój poziom</h2></div>
+    <div class="levels-container">
+        <a href="kontakt.html" class="level-btn">🌟 Początkujący</a>
+        <a href="kontakt.html" class="level-btn">🔭 Średniozaawansowany</a>
+        <a href="kontakt.html" class="level-btn">🚀 Zaawansowany</a>
+    </div>
+</section>
         <section>
             <div class="section-header"><h2>Dostępne programy</h2></div>
             <div class="grid-container">
