@@ -108,7 +108,7 @@ section {
 }
 
 .hero-content h1 {
-    color: var(--heading-color); /* Zmieniono z białego na jasnoniebieski */
+    color: #e8e8e8; /* Zmieniono z białego na jasnoniebieski */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Dodano delikatny cień dla czytelności */
     margin-bottom: 0.5rem;
 }
