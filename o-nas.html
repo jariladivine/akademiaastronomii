@@ -3,10 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O nas - Akademia Astronomii</title>
+    <meta name="description" content="O Akademii Astronomii - nasz zespół, misja i historia. Edukacja astronomiczna dla wszystkich.">
+    <title>Akademia Astronomii - O nas</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- STYLE SPECYFICZNE DLA PODSTRONY O NAS --- */
+
+        /* Misja - stylowy akapit */
+        .mission-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .mission-text::first-line {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Karty zespołu - ulepszony grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            transition: all var(--transition-speed);
+            box-shadow: var(--shadow);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .team-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--primary-color);
+            padding: 5px;
+            background: var(--dark-bg);
+        }
+
+        .team-card h3 {
+            margin-bottom: 0.2rem;
+        }
+
+        .team-role {
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Oś czasu / Historia */
+        .history-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+            margin-left: 1rem;
+        }
+
+        .history-list li {
+            padding: 1.5rem;
+            position: relative;
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .history-list li::before {
+            content: "";
+            position: absolute;
+            left: -2.4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 4px solid var(--dark-bg);
+        }
+
+        .history-list li:first-child { border-left: 4px solid var(--secondary-color); }
+        .history-list li:last-child { border-left: 4px solid var(--accent-color); }
+
+        /* Wartości - pseudo-elementy */
+        .value-item {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 1.2rem 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: scale(1.02);
+            background: rgba(108, 92, 231, 0.05);
+        }
+
+        .value-item::before {
+            content: "✦";
+            position: absolute;
+            left: 1.5rem;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .value-item::after {
+            content: "✓";
+            position: absolute;
+            right: 1.5rem;
+            color: var(--secondary-color);
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
         <nav>
@@ -21,51 +154,94 @@
     </header>
 
     <main>
-        <section>
-            <div class="section-header"><h2>Nasza misja</h2></div>
-            <p class="mission-text">Wierzymy, że edukacja astronomiczna powinna być dostępna dla każdego, niezależnie od wieku czy posiadanej wiedzy technicznej. Nasz zespół tworzy materiały, które inspirują do patrzenia w gwiazdy i zadawania fundamentalnych pytań o nasze miejsce we wszechświecie.</p>
-        </section>
-
-        <section>
-            <div class="section-header"><h2>Nasz Zespół</h2></div>
-            <div class="grid-container">
-                <article class="card" style="text-align: center;">
-                    <img src="https://i.pravatar.cc/150?u=1" alt="Jan Kowalski" class="team-img">
-                    <h3>Dr Jan Kowalski</h3>
-                    <p>Astrofizyk i pasjonat mgławic.</p>
-                </article>
-                <article class="card" style="text-align: center;">
-                    <img src="https://i.pravatar.cc/150?u=2" alt="Anna Nowak" class="team-img">
-                    <h3>Anna Nowak</h3>
-                    <p>Specjalistka od astrofotografii.</p>
-                </article>
+        <section class="hero-box">
+            <div class="hero-content">
+                <h1>Poznaj naszą Akademię</h1>
+                <p>Jesteśmy zespołem pasjonatów, których połączyła miłość do gwiazd i chęć odkrywania tajemnic wszechświata.</p>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Nasze Wartości</h2></div>
-            <div class="value-block">Pasja do odkrywania nowych światów.</div>
-            <div class="value-block">Precyzja w przekazywaniu wiedzy naukowej.</div>
-            <div class="value-block">Wspieranie lokalnych społeczności obserwatorów.</div>
+            <div class="section-header"><h2>Nasza misja</h2></div>
+            <p class="mission-text">
+                Wierzymy, że astronomia jest dla każdego. Nie musisz mieć teleskopu ani dyplomu z fizyki, żeby zachwycić się kosmosem. 
+                Nasza akademia powstała w 2020 roku z prostego pomysłu — sprawić, by skomplikowana nauka stała się zrozumiała 
+                i fascynująca dla wszystkich. Od tamtej pory przeszkoliliśmy ponad 5000 osób, udowadniając, że niebo nie ma granic.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-header"><h2>Nasi Eksperci</h2></div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://picsum.photos/seed/person1/300/300" alt="Dr Anna Kowalska" class="team-photo">
+                    <h3>Dr Anna Kowalska</h3>
+                    <span class="team-role">Astrofizyk</span>
+                    <p>Specjalizuje się w badaniu egzoplanet. Prowadzi kursy o poszukiwaniu drugiej Ziemi.</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://picsum.photos/seed/person2/300/300" alt="Prof. Marek Nowak" class="team-photo">
+                    <h3>Prof. Marek Nowak</h3>
+                    <span class="team-role">Kosmolog</span>
+                    <p>Bada strukturę wszechświata. Autor publikacji o ciemnej materii i czarnych dziurach.</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://picsum.photos/seed/person3/300/300" alt="Mgr Katarzyna Wiśniewska" class="team-photo">
+                    <h3>Mgr K. Wiśniewska</h3>
+                    <span class="team-role">Edukatorka</span>
+                    <p>Popularyzatorka nauki. Dba o to, by najtrudniejsze zjawiska stały się proste dla dzieci.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header"><h2>Kluczowe daty</h2></div>
+            <ul class="history-list">
+                <li><strong>2020</strong> — Powstanie Akademii Astronomii w sercu Warszawy.</li>
+                <li><strong>2022</strong> — Przekroczenie progu 1000 aktywnych kursantów online.</li>
+                <li><strong>2024</strong> — Otwarcie naszego prywatnego obserwatorium na Mazurach.</li>
+                <li><strong>2025</strong> — Otrzymanie nagrody "Popularyzator Nauki Roku".</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="section-header"><h2>Fundamenty naszej pracy</h2></div>
+            <div class="values-container">
+                <div class="value-item"><strong>Pasja</strong> — Kosmos to nasza największa fascynacja.</div>
+                <div class="value-item"><strong>Dostępność</strong> — Edukujemy bez barier i trudnego żargonu.</div>
+                <div class="value-item"><strong>Rzetelność</strong> — Bazujemy wyłącznie na faktach naukowych.</div>
+            </div>
         </section>
 
         <section>
             <div class="section-header"><h2>Akademia w liczbach</h2></div>
-            <table class="data-table">
-                <thead>
-                    <tr><th>Kategoria</th><th>Liczba</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Przeszkoleni kursanci</td><td>12,500+</td></tr>
-                    <tr><td>Zorganizowane obserwacje</td><td>450</td></tr>
-                    <tr><td>Odkryte asteroidy</td><td>3</td></tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Kategoria</th>
+                            <th>Osiągnięcie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Absolwenci kursów</td><td><strong>5 200+</strong> osób</td></tr>
+                        <tr><td>Liczba wykładowców</td><td>12 specjalistów</td></tr>
+                        <tr><td>Zorganizowane obserwacje</td><td>340 nocy pod gwiazdami</td></tr>
+                        <tr><td>Partnerzy naukowi</td><td>8 instytucji z całego świata</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii — wiedza o kosmosie dla każdego</p>
+        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
+        <div class="footer-links">
+            <a href="index.html">← Strona Główna</a> · <a href="kursy.html">Nasze Kursy →</a>
+        </div>
     </footer>
+
 </body>
 </html>
