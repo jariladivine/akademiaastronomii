@@ -1,26 +1,23 @@
 :root {
-    --primary-color: #6c5ce7;      /* Fiolet */
-    --secondary-color: #00cec9;    /* Turkus */
-    --accent-color: #fd79a8;       /* Różowy */
-    --dark-bg: #1e1e2e;            /* Ciemne tło główne */
-    --card-bg: #2a2a3e;            /* Tło kart i sekcji */
-    --text-color: #e0e0e0;         /* Jasny tekst */
-    --text-muted: #a0a0b0;         /* Przygaszony tekst */
+    --primary-color: #6c5ce7;
+    --secondary-color: #00cec9;
+    --accent-color: #fd79a8;
+    --dark-bg: #1e1e2e;
+    --card-bg: #2a2a3e;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0b0;
     --border-color: #3a3a4e;
-    --heading-color: #73C0F1;      /* Jasnoniebieski dla nagłówków */
+    --heading-color: #73C0F1;
     --font-size: 16px;
     --radius: 12px;
     --shadow: 0 4px 20px rgba(0,0,0,0.5);
     --transition-speed: 0.3s;
 }
-
-/* --- RESET --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: var(--font-size);
@@ -28,8 +25,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
 }
-
-/* --- NAGŁÓWEK --- */
 header {
     position: sticky;
     top: 0;
@@ -42,20 +37,17 @@ header {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
 }
-
 .service-name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--heading-color); /* Zmieniony kolor napisu */
+    color: var(--heading-color);
     letter-spacing: 1px;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
-
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
@@ -64,40 +56,29 @@ header {
     border-radius: 6px;
     transition: all var(--transition-speed);
 }
-
 .nav-links a:hover, .nav-links a.active {
     background-color: var(--primary-color);
     color: #fff;
 }
-
-/* --- TYPOGRAFIA --- */
 h1, h2, h3, h4 {
-    color: var(--heading-color); /* Zmieniony kolor nagłówków */
+    color: var(--heading-color);
     margin-bottom: 0.5em;
 }
-
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
-
-/* --- UKŁAD GŁÓWNY --- */
 main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
 }
-
 section {
     margin-bottom: 4rem;
 }
-
 .section-header {
     border-left: 4px solid var(--primary-color);
     padding-left: 1rem;
     margin-bottom: 1.5rem;
 }
-
-/* --- SEKCJA HERO (WYŚRODKOWANA) --- */
-/* --- HERO --- */
 .hero-box {
     text-align: center; 
     padding: 4rem 1rem;
@@ -106,38 +87,30 @@ section {
     color: #fff; 
     margin-bottom: 3rem;
 }
-
 .hero-content h1 {
-    color: #e8e8e8; /* Zmieniono z białego na jasnoniebieski */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Dodano delikatny cień dla czytelności */
+    color: #e8e8e8;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     margin-bottom: 0.5rem;
 }
-
 .hero-content p {
-    color: #fff; /* Pozostawiamy biały dla kontrastu */
+    color: #fff;
 }
-
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: rgba(255,255,255,0.9);
 }
-
-/* --- TABELA (WYRAŹNA) --- */
-
 .table-wrapper {
-    overflow-x: auto; /* Pozwala na scrollowanie samej tabeli na telefonie */
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin: 2rem 0;
     border-radius: var(--radius);
     border: 2px solid var(--heading-color);
 }
-
 .styled-table {
-    min-width: 500px; /* Zapobiega zbytniemu ściskaniu kolumn */
+    min-width: 500px;
     width: 100%;
 }
-
 .styled-table th {
     background: var(--heading-color);
     color: var(--dark-bg);
@@ -146,23 +119,18 @@ section {
     text-transform: uppercase;
     font-size: 0.9rem;
 }
-
 .styled-table td {
     padding: 1rem;
     border-bottom: 1px solid var(--border-color);
 }
-
 .styled-table tr:hover {
     background: rgba(88, 166, 255, 0.1);
 }
-
-/* --- SIATKA KART --- */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
-
 .card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -170,12 +138,10 @@ section {
     padding: 1.5rem;
     transition: transform var(--transition-speed);
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
 }
-
 .card img {
     width: 100%;
     height: 180px;
@@ -183,8 +149,6 @@ section {
     border-radius: 8px;
     margin-bottom: 1rem;
 }
-
-/* --- PRZYCISKI --- */
 .btn {
     display: inline-block;
     padding: 0.7rem 1.5rem;
@@ -195,23 +159,18 @@ section {
     transition: var(--transition-speed);
     border: none;
 }
-
 .btn:hover {
     transform: scale(1.03);
 }
-
 .btn--cta {
     background: var(--secondary-color);
     color: var(--dark-bg);
 }
-
 .btn--more {
     background: var(--primary-color);
     color: #fff;
     margin-top: 1rem;
 }
-
-/* --- BANER KURSU (NIEBIESKI PULS) --- */
 .banner-subtle {
     padding: 1.5rem;
     border-radius: var(--radius);
@@ -220,14 +179,11 @@ section {
     font-weight: bold;
     animation: bluePulse 4s infinite;
 }
-
 @keyframes bluePulse {
     0% { background-color: #1e1e2e; box-shadow: 0 0 0px rgba(88, 166, 255, 0); }
     50% { background-color: #1f6feb; box-shadow: 0 0 20px rgba(88, 166, 255, 0.4); }
     100% { background-color: #1e1e2e; box-shadow: 0 0 0px rgba(88, 166, 255, 0); }
 }
-
-/* --- INICJAŁ (DROPCAP) --- */
 .dropcap::first-letter {
     font-size: 3rem;
     font-weight: bold;
@@ -236,24 +192,20 @@ section {
     margin-right: 12px;
     line-height: 1;
 }
-
-/* --- NEWSLETTER (WYŚRODKOWANY) --- */
 .form-container {
     background: var(--card-bg);
     padding: 3rem;
     border-radius: var(--radius);
-    text-align: center; /* Wyśrodkowanie tekstu */
+    text-align: center;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid var(--border-color);
 }
-
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--text-color);
 }
-
 .form-group input {
     width: 100%;
     max-width: 350px;
@@ -265,21 +217,17 @@ section {
     margin-bottom: 1.5rem;
     text-align: center;
 }
-
-/* --- CYTAT NA ZDJĘCIU --- */
 .quote-section {
     position: relative;
     border-radius: var(--radius);
     overflow: hidden;
 }
-
 .quote-section img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     display: block;
 }
-
 .quote-overlay {
     position: absolute;
     inset: 0;
@@ -289,7 +237,6 @@ section {
     align-items: center;
     padding: 2rem;
 }
-
 blockquote {
     color: #fff;
     font-size: 1.4rem;
@@ -297,69 +244,52 @@ blockquote {
     text-align: center;
     font-style: italic;
 }
-
-/* --- STOPKA (WYŚRODKOWANA) --- */
 footer {
     text-align: center;
     padding: 3rem 1.5rem;
     background: var(--card-bg);
     border-top: 1px solid var(--border-color);
 }
-
 footer p {
     color: var(--text-muted);
 }
-
 .footer-links {
     margin-top: 1rem;
 }
-
 .footer-links a {
     color: var(--heading-color);
     text-decoration: none;
     margin: 0 10px;
 }
-
-/* --- RESPONSYWNOŚĆ --- */
-/* --- RESPONSYWNOŚĆ (Media Queries) --- */
-
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         padding: 1rem;
     }
-
     .nav-links {
-        flex-wrap: wrap; /* Linki zawiną się do nowej linii, jeśli zabraknie miejsca */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 0.5rem;
         margin-top: 1rem;
     }
-
     .nav-links a {
         font-size: 0.9rem;
         padding: 0.5rem;
     }
-
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }
-
     .form-container {
-        padding: 1.5rem; /* Mniejszy padding na telefonach */
+        padding: 1.5rem;
     }
-
     .quote-section img {
-        height: 200px; /* Krótszy obrazek w cytacie na małym ekranie */
+        height: 200px;
     }
 }
-
 @media (max-width: 480px) {
     main {
-        padding: 1rem 0.5rem; /* Więcej miejsca dla treści na krawędziach */
+        padding: 1rem 0.5rem;
     }
-
     .grid-container {
-        grid-template-columns: 1fr; /* Na bardzo małych ekranach tylko jedna karta w rzędzie */
+        grid-template-columns: 1fr;
     }
 }
-
