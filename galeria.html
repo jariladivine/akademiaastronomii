@@ -85,7 +85,6 @@
             background-color: var(--primary-color);
             color: #fff;
         }
-      
 
         /* --- UKŁAD GŁÓWNY --- */
         main {
@@ -109,7 +108,7 @@
             margin-bottom: 0.5em;
         }
 
-        /* --- HERO --- */
+        /* --- HERO (UJEDNOLICONY ZE STRONĄ GŁÓWNĄ) --- */
         .hero-box {
             text-align: center; 
             padding: 4rem 1rem;
@@ -123,11 +122,12 @@
             color: #e8e8e8;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             margin-bottom: 0.5rem;
+            font-size: 2.5rem;
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0; /* W galerii nie ma przycisku w hero, więc usuwamy margines dolny */
             color: rgba(255,255,255,0.9);
         }
 
@@ -284,6 +284,7 @@
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 1rem; }
             .nav-links { margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+            .hero-content h1 { font-size: 1.8rem; }
             .nebula-container { height: 250px; }
             .fact-full-width { grid-column: auto; }
         }
@@ -309,6 +310,7 @@
           <div class="hero-content">
             <h1>Galeria Wszechświata</h1>
             <p>Zatrzymaj się i spójrz w górę. Oto najpiękniejsze obiekty zarejestrowane przez nasze teleskopy.</p>
+          </div>
         </section>
 
         <section>
