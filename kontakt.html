@@ -7,28 +7,25 @@
     <title>Akademia Astronomii - Kontakt</title>
     <style>
         :root {
-            --primary-color: #6c5ce7;      /* Fiolet */
-            --secondary-color: #00cec9;    /* Turkus */
-            --accent-color: #fd79a8;       /* Różowy */
-            --dark-bg: #1e1e2e;            /* Ciemne tło główne */
-            --card-bg: #2a2a3e;            /* Tło kart i sekcji */
-            --text-color: #e0e0e0;          /* Jasny tekst */
-            --text-muted: #a0a0b0;          /* Przygaszony tekst */
+            --primary-color: #6c5ce7;
+            --secondary-color: #00cec9;
+            --accent-color: #fd79a8;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3e;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0b0;
             --border-color: #3a3a4e;
-            --heading-color: #73C0F1;      /* Jasnoniebieski dla nagłówków */
+            --heading-color: #73C0F1;
             --font-size: 16px;
             --radius: 12px;
             --shadow: 0 4px 20px rgba(0,0,0,0.5);
             --transition-speed: 0.3s;
         }
-
-        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: var(--font-size);
@@ -37,8 +34,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* --- NAGŁÓWEK --- */
         header {
             position: sticky;
             top: 0;
@@ -51,20 +46,17 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
         }
-
         .service-name {
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--heading-color);
             letter-spacing: 1px;
         }
-
         .nav-links {
             list-style: none;
             display: flex;
             gap: 1.5rem;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
@@ -73,30 +65,24 @@
             border-radius: 6px;
             transition: all var(--transition-speed);
         }
-
         .nav-links a:hover, .nav-links a.active {
             background-color: var(--primary-color);
             color: #fff;
         }
-
-        /* --- UKŁAD GŁÓWNY --- */
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
-
         section {
             margin-bottom: 4rem;
         }
-
         .grid-container {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 2rem;
             align-items: start;
         }
-
         .card {
             background: var(--card-bg);
             padding: 2rem;
@@ -104,29 +90,24 @@
             box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
         }
-
         .section-header {
             border-left: 4px solid var(--primary-color);
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
-
         h1, h2, h3, h4 {
             color: var(--heading-color);
             margin-bottom: 0.5em;
         }
-
-        /* --- HERO (UJEDNOLICONY) --- */
              .hero-box {
     text-align: center; 
-    padding: 5rem 1rem; /* Zwiększony padding dla lepszego efektu */
+    padding: 5rem 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: var(--radius); 
     color: #fff; 
     margin-bottom: 3rem;
     box-shadow: var(--shadow);
 }
-
 .hero-content h1 {
    font-size: clamp(1.5rem, 5vw, 2rem); 
     color: #ffffff;
@@ -134,29 +115,23 @@
     margin-bottom: 1rem;
     line-height: 1.2;
 }
-
 .hero-content p {
     font-size: clamp(1rem, 3vw, 1.25rem);
     max-width: 700px;
-    margin: 0 auto 2rem auto; /* Wyśrodkowanie tekstu i margines pod nim */
+    margin: 0 auto 2rem auto;
     color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
 }
-
-
-        /* --- FORMULARZ --- */
         .contact-form-group {
             margin-bottom: 1.2rem;
             text-align: left;
         }
-
         .contact-form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--text-color);
             font-weight: 600;
         }
-
         .contact-form-group input, 
         .contact-form-group textarea {
             width: 100%;
@@ -168,18 +143,15 @@
             font-family: inherit;
             transition: border-color var(--transition-speed);
         }
-
         .contact-form-group textarea {
             min-height: 120px;
             resize: vertical;
         }
-
         .contact-form-group input:focus, 
         .contact-form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
         }
-
         .btn {
             background: var(--primary-color);
             color: white;
@@ -191,13 +163,10 @@
             transition: transform 0.2s, background-color 0.2s;
             font-size: 1rem;
         }
-
         .btn:hover {
             background-color: #5b4bc4;
             transform: translateY(-2px);
         }
-
-        /* --- KONTAKT INFO --- */
         .contact-item {
             position: relative;
             padding: 0.8rem 1rem 0.8rem 2.5rem;
@@ -207,14 +176,12 @@
             font-size: 0.95rem;
             border: 1px solid var(--border-color);
         }
-
         .contact-item::before {
             content: "✦";
             position: absolute;
             left: 1rem;
             color: var(--secondary-color);
         }
-
         .contact-img {
             width: 100%;
             height: 180px;
@@ -223,8 +190,6 @@
             margin-top: 1rem;
             border: 1px solid var(--border-color);
         }
-
-        /* Mapa Demo */
         .map-demo-container {
             min-height: 250px;
             background: var(--card-bg);
@@ -236,12 +201,10 @@
             overflow: hidden;
             box-shadow: var(--shadow);
         }
-
         .map-box-1 { background: rgba(108, 92, 231, 0.2); border: 1px solid var(--primary-color); padding: 15px; border-radius: 8px; margin-bottom: 10px; }
         .map-box-2 { background: rgba(0, 206, 201, 0.2); border: 1px solid var(--secondary-color); padding: 15px; border-radius: 8px; margin-left: 30px; }
-        .map-box-3 { position: absolute; bottom: 20px; right: 20px; background: var(--accent-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
-
-        /* Społeczność */
+        .map-box-3 { position: absolute; bottom: 20px; right: 20px; background: var(--accent-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; 
+        }
         .benefits-container {
             text-align: center;
             margin-top: 2rem;
@@ -250,7 +213,6 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
         .benefit-tile {
             display: inline-block;
             background-color: var(--primary-color);
@@ -262,13 +224,10 @@
             transition: transform 0.2s ease, background-color 0.3s ease;
             text-decoration: none;
         }
-
         .benefit-tile:hover {
             transform: translateY(-3px);
             background-color: var(--accent-color);
         }
-
-        /* Banner animowany */
         .newsletter-banner {
             background: linear-gradient(-45deg, #6c5ce7, #2a2a3e, #00cec9);
             background-size: 400% 400%;
@@ -282,14 +241,11 @@
             box-shadow: var(--shadow);
             margin-top: 3rem;
         }
-
         @keyframes colorShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        /* --- STOPKA --- */
         footer {
             text-align: center;
             padding: 3rem 1.5rem;
@@ -297,34 +253,27 @@
             border-top: 1px solid var(--border-color);
             margin-top: 4rem;
         }
-
         footer p {
             color: var(--text-muted);
         }
-
         .footer-links {
             margin-top: 1rem;
         }
-
         .footer-links a {
             color: var(--heading-color);
             text-decoration: none;
             margin: 0 10px;
             transition: color var(--transition-speed);
         }
-
         .footer-links a:hover {
             color: var(--primary-color);
         }
-
-        /* --- RESPONSYWNOŚĆ --- */
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 1rem; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
             .grid-container { grid-template-columns: 1fr; }
             .map-box-2 { margin-left: 0; }
         }
-
         @media (max-width: 480px) {
             main { padding: 1rem 0.8rem; }
             .hero-box { padding: 3rem 1rem; }
@@ -334,7 +283,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <div class="service-name">🔭 Akademia Astronomii</div>
         <nav>
@@ -347,18 +295,16 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="hero-box">
            <div class="hero-content">
             <h1>Skontaktuj się z nami</h1>
-            <p>Masz pytania o kursy, obserwacje lub współpracę? Napisz do nas — odpowiadamy w ciągu 24 godzin!</p>
+            <p>Masz pytania? Napisz do nas - odpowiadamy w ciągu maksymalnie 24 godzin!</p>
           </div>
         </section>
-
         <section>
             <div class="section-header">
-                <h2>Formularz i Dane</h2>
+                <h2>Dane</h2>
             </div>
             
             <div class="grid-container">
@@ -374,70 +320,64 @@
                             <input type="email" id="contact-email" placeholder="jan@example.com" required>
                         </div>
                         <div class="contact-form-group">
-                            <label for="contact-subject">Temat</label>
+                            <label for="contact-subject">Tytuł</label>
                             <input type="text" id="contact-subject" placeholder="Pytanie o kurs">
                         </div>
                         <div class="contact-form-group">
                             <label for="contact-message">Wiadomość</label>
                             <textarea id="contact-message" placeholder="W czym możemy pomóc?" required></textarea>
                         </div>
-                        <button type="submit" class="btn" style="width: 100%;">Wyślij wiadomość 📩</button>
+                        <button type="submit" class="btn" style="width: 100%;">Wyślij wiadomość</button>
                     </form>
                 </article>
-
                 <aside class="contact-details-list">
                     <div class="card">
                         <h3>Biuro Główne</h3>
-                        <div class="contact-item">ul. Kopernika 15, 00-001 Warszawa</div>
+                        <div class="contact-item">ul. Nowa 31, Kraków 34-100</div>
                         <div class="contact-item">kontakt@akademia-astronomii.pl</div>
-                        <div class="contact-item">+48 22 123 45 67</div>
-                        <div class="contact-item">pon–pt 10–18, sob 10–14</div>
+                        <div class="contact-item">+48 123 456 789</div>
+                        <div class="contact-item">pon–pt 9–18, sob 10–14</div>
                     </div>
-
                     <div class="card" style="margin-top: 1.5rem;">
                         <h3>Obserwatorium</h3>
-                        <div class="contact-item">Mazury, Jezioro Śniardwy</div>
+                        <div class="contact-item">Kraków, Libertów</div>
                         <div class="contact-item">obserwatorium@akademia-astronomii.pl</div>
                         <img src="https://picsum.photos/seed/observatory/600/300" alt="Obserwatorium" class="contact-img">
                     </div>
                 </aside>
             </div>
         </section>
-
         <section>
             <div class="section-header">
                 <h2>Znajdź nas na mapie</h2>
             </div>
             <div class="map-demo-container">
-                <div class="map-box-1">📍 <strong>Siedziba główna</strong> — Warszawa, Centrum (ul. Kopernika)</div>
-                <div class="map-box-2">🔭 <strong>Obserwatorium</strong> — 250km na północ (Mazury, Śniardwy)</div>
+                <div class="map-box-1">📍 <strong>Siedziba główna</strong> Karków ul. Nowa 31</div>
+                <div class="map-box-2">🔭 <strong>Obserwatorium</strong> 10 km od centrum Krakowa</div>
                 <div class="map-box-3">Mapa interaktywna: Wkrótce</div>
             </div>
         </section>
-
         <section>
             <div class="section-header">
-                <h2>Dołącz do społeczności</h2>
+                <h2>Dołącz do nas</h2>
             </div>
-            <p style="text-align: center; margin-bottom: 1.5rem;">Odkrywaj kosmos razem z nami w sieci</p>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Odkrywaj kosmos razem z nami przez internet</p>
             <div class="benefits-container">
                 <a href="#" class="benefit-tile">Facebook</a>
                 <a href="#" class="benefit-tile">Instagram</a>
-                <a href="#" class="benefit-tile">Twitter</a>
+                <a href="#" class="benefit-tile">X</a>
                 <a href="#" class="benefit-tile">YouTube</a>
             </div>
         </section>
-
         <section class="newsletter-banner">
             <div>
-                🌟 Zapisz się do newslettera i odbierz darmowy e-book: <br>
-                <span style="color: var(--secondary-color)">„Przewodnik po nocnym niebie 2026"</span>
+                Zapisz się do newslettera i odbierz darmowy e-book: <br>
+                <span style="color: var(--secondary-color)">„Przewodnik po gwiazdach 2026"</span>
             </div>
         </section>
     </main>
-
     <footer>
-        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
+        <p>© 2026 Akademia Astronomii - Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
             <a href="o-nas.html">O nas</a> · 
             <a href="kursy.html">Kursy</a> · 
