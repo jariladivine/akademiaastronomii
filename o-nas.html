@@ -22,7 +22,7 @@
             --transition-speed: 0.3s;
         }
 
-        /* --- RESET I BAZA --- */
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -36,12 +36,6 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
         }
 
         /* --- NAGŁÓWEK (UJEDNOLICONY) --- */
@@ -80,6 +74,7 @@
             transition: all var(--transition-speed);
         }
 
+        /* Styl dla aktywnego linku oraz hover */
         .nav-links a:hover, .nav-links a.active {
             background-color: var(--primary-color);
             color: #fff;
