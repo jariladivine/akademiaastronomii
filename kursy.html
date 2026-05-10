@@ -7,72 +7,96 @@
     <title>Akademia Astronomii - Kursy</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- POZIOMY KURSÓW --- */
+        /* --- STYLE SPECYFICZNE DLA PODSTRONY KURSY --- */
+
+        /* Poziomy kursów */
         .levels-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 1rem;
             background: var(--card-bg);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
         }
 
         .level-pill {
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 1.8rem;
             border-radius: 50px;
             color: white;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
-        /* Użycie nth-child zgodnie z wytycznymi */
         .level-pill:nth-child(1) { background-color: var(--primary-color); }
-        .level-pill:nth-child(2) { background-color: var(--secondary-color); }
+        .level-pill:nth-child(2) { background-color: var(--secondary-color); color: var(--dark-bg); }
         .level-pill:nth-child(3) { background-color: var(--accent-color); }
 
-        /* --- CO ZYSKUJESZ? (INTERAKTYWNE KAFLE) --- */
-        .benefits-container {
+        /* Kafelki korzyści */
+        .benefits-wrapper {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .benefit-tile {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.2rem 2rem;
-            border-radius: 8px;
+            background-color: var(--card-bg);
+            color: var(--heading-color);
+            padding: 1.5rem 2.5rem;
+            border-radius: var(--radius);
             margin: 0.5rem;
             font-weight: 600;
-            cursor: default;
-            transition: background-color 0.5s ease, transform 0.3s ease, border-radius 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .benefit-tile:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.08);
-            border-radius: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow);
         }
 
-        /* --- KOŃCOWE CTA Z ANIMACJĄ PULSE --- */
+        /* Przycisk CTA Pulse */
         .cta-section {
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 0;
+            background: rgba(108, 92, 231, 0.05);
+            border-radius: var(--radius);
+            margin-top: 2rem;
         }
 
         .cta-pulse {
             display: inline-block;
-            font-size: 1.2rem;
-            padding: 1rem 2.5rem;
-            animation: pulse 2s infinite;
+            font-size: 1.3rem;
+            padding: 1.2rem 3rem;
+            animation: pulse-animation 2s infinite;
             text-decoration: none;
+            background: var(--secondary-color);
+            color: var(--dark-bg);
+            border-radius: 50px;
+            font-weight: 800;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes pulse-animation {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 206, 201, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(0, 206, 201, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 206, 201, 0); }
+        }
+
+        .course-meta {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -94,13 +118,13 @@
     <main>
         <section class="hero-box">
             <div class="hero-content">
-                <h1>Nasze kursy</h1>
-                <p>Wybierz kurs dopasowany do Twojego poziomu — od podstaw astronomii po zaawansowaną astrofotografię.</p>
+                <h1>Edukacja Kosmiczna</h1>
+                <p>Wybierz kurs dopasowany do Twojego poziomu — od podstaw astronomii po zaawansowaną astrofotografię głębokiego nieba.</p>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Poziomy kursów</h2></div>
+            <div class="section-header"><h2>Poziomy zaawansowania</h2></div>
             <div class="levels-container">
                 <div class="level-pill">🌟 Początkujący</div>
                 <div class="level-pill">🔭 Średniozaawansowany</div>
@@ -109,85 +133,94 @@
         </section>
 
         <section>
-            <div class="section-header"><h2>Oferta kursów</h2></div>
+            <div class="section-header"><h2>Dostępne programy</h2></div>
             <div class="grid-container">
                 <article class="card">
-                    <img src="https://picsum.photos/seed/solarsystem/600/350" alt="Układ Słoneczny" class="card-image">
+                    <img src="https://picsum.photos/seed/solarsystem/600/350" alt="Układ Słoneczny">
                     <h3>Układ Słoneczny</h3>
                     <p>Poznaj planety, księżyce i pas asteroidów. Kurs idealny na start przygody z astronomią.</p>
-                    <p><strong>Czas trwania:</strong> 8 tygodni</p>
-                    <a href="kontakt.html" class="btn btn--more">Zapisz się</a>
+                    <div class="course-meta">
+                        <strong>⏱ Czas:</strong> 8 tygodni | <strong>📍 Forma:</strong> Online
+                    </div>
+                    <a href="kontakt.html" class="btn btn--more">Zapisz się na kurs</a>
                 </article>
 
                 <article class="card">
-                    <img src="https://picsum.photos/seed/constellations/600/350" alt="Konstelacje" class="card-image">
+                    <img src="https://picsum.photos/seed/constellations/600/350" alt="Konstelacje">
                     <h3>Gwiazdy i konstelacje</h3>
                     <p>Naucz się rozpoznawać gwiazdozbiory i zrozum cykl życia gwiazd — od mgławicy po czarną dziurę.</p>
-                    <p><strong>Czas trwania:</strong> 10 tygodni</p>
-                    <a href="kontakt.html" class="btn btn--more">Zapisz się</a>
+                    <div class="course-meta">
+                        <strong>⏱ Czas:</strong> 10 tygodni | <strong>📍 Forma:</strong> Stacjonarnie
+                    </div>
+                    <a href="kontakt.html" class="btn btn--more">Zapisz się na kurs</a>
                 </article>
 
                 <article class="card">
-                    <img src="https://picsum.photos/seed/deepspace/600/350" alt="Głęboki kosmos" class="card-image">
+                    <img src="https://picsum.photos/seed/deepspace/600/350" alt="Głęboki kosmos">
                     <h3>Galaktyki i kosmologia</h3>
-                    <p>Ciemna materia, Wielki Wybuch i ekspansja wszechświata — zanurz się w tajemnice fizyki.</p>
-                    <p><strong>Czas trwania:</strong> 12 tygodni</p>
-                    <a href="kontakt.html" class="btn btn--more">Zapisz się</a>
+                    <p>Ciemna materia, Wielki Wybuch i ekspansja wszechświata — zanurz się w tajemnice fizyki kwantowej.</p>
+                    <div class="course-meta">
+                        <strong>⏱ Czas:</strong> 12 tygodni | <strong>📍 Forma:</strong> Online
+                    </div>
+                    <a href="kontakt.html" class="btn btn--more">Zapisz się na kurs</a>
                 </article>
 
                 <article class="card">
-                    <img src="https://picsum.photos/seed/astrophoto/600/350" alt="Astrofotografia" class="card-image">
+                    <img src="https://picsum.photos/seed/astrophoto/600/350" alt="Astrofotografia">
                     <h3>Astrofotografia</h3>
-                    <p>Naucz się fotografować nocne niebo — od smartfona po zaawansowane techniki z teleskopem.</p>
-                    <p><strong>Czas trwania:</strong> 6 tygodni</p>
-                    <a href="kontakt.html" class="btn btn--more">Zapisz się</a>
+                    <p>Naucz się fotografować nocne niebo — od prostych ujęć smartfonem po zaawansowane techniki z teleskopem.</p>
+                    <div class="course-meta">
+                        <strong>⏱ Czas:</strong> 6 tygodni | <strong>📍 Forma:</strong> Plener
+                    </div>
+                    <a href="kontakt.html" class="btn btn--more">Zapisz się na kurs</a>
                 </article>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Harmonogram zajęć</h2></div>
+            <div class="section-header"><h2>Harmonogram zajęć 2026</h2></div>
             <div class="table-wrapper">
                 <table class="styled-table">
                     <thead>
                         <tr>
                             <th>Kurs</th>
-                            <th>Dzień</th>
+                            <th>Dzień tygodnia</th>
                             <th>Godzina</th>
-                            <th>Forma</th>
+                            <th>Forma nauki</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Układ Słoneczny</td><td>Poniedziałek</td><td>18:00 – 19:30</td><td>Online</td></tr>
-                        <tr><td>Gwiazdy i konstelacje</td><td>Środa</td><td>19:00 – 20:30</td><td>Stacjonarnie</td></tr>
-                        <tr><td>Galaktyki i kosmologia</td><td>Piątek</td><td>17:30 – 19:00</td><td>Online</td></tr>
-                        <tr><td>Astrofotografia</td><td>Sobota</td><td>20:00 – 22:00</td><td>Stacjonarnie + plener</td></tr>
+                        <tr><td>Układ Słoneczny</td><td>Poniedziałek</td><td>18:00 – 19:30</td><td>Online (Zoom)</td></tr>
+                        <tr><td>Gwiazdy i konstelacje</td><td>Środa</td><td>19:00 – 20:30</td><td>Stacjonarnie (Warszawa)</td></tr>
+                        <tr><td>Galaktyki i kosmologia</td><td>Piątek</td><td>17:30 – 19:00</td><td>Online (Zoom)</td></tr>
+                        <tr><td>Astrofotografia</td><td>Sobota</td><td>20:00 – 22:00</td><td>Warsztaty terenowe</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Co zyskujesz?</h2></div>
-            <p style="text-align: center;">Najedź myszką na pola poniżej, aby odkryć korzyści:</p>
-            <div class="benefits-container">
-                <div class="benefit-tile">📚 Materiały</div>
-                <div class="benefit-tile">🎓 Certyfikat</div>
-                <div class="benefit-tile">🔭 Obserwacje</div>
-                <div class="benefit-tile">👥 Społeczność</div>
+            <div class="section-header"><h2>Dlaczego warto?</h2></div>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Interaktywne korzyści dla każdego studenta:</p>
+            <div class="benefits-wrapper">
+                <div class="benefit-tile">📚 Materiały PDF</div>
+                <div class="benefit-tile">🎓 Certyfikat ITCA</div>
+                <div class="benefit-tile">🔭 Dostęp do teleskopu</div>
+                <div class="benefit-tile">👥 Grupa Discord</div>
             </div>
         </section>
 
         <section class="cta-section">
-            <a href="kontakt.html" class="btn btn--primary cta-pulse">📩 Zapisz się na kurs już dziś!</a>
+            <h2 style="margin-bottom: 1.5rem;">Gotowy na start?</h2>
+            <a href="kontakt.html" class="cta-pulse">🚀 Zarezerwuj miejsce teraz!</a>
+            <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">Liczba miejsc w grupach stacjonarnych jest ograniczona.</p>
         </section>
-
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii — wiedza o kosmosie dla każdego</p>
+        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
-            <a href="o-nas.html">← O nas</a> · <a href="galeria.html">Galeria →</a>
+            <a href="o-nas.html">← O nas</a> · <a href="index.html">Strona Główna</a> · <a href="galeria.html">Galeria →</a>
         </div>
     </footer>
 
