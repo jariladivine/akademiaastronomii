@@ -40,6 +40,19 @@
 
    
         /* --- NAGŁÓWEK --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 10%;
+            background: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
         .service-name {
             font-size: 1.4rem;
             font-weight: 700;
@@ -47,6 +60,11 @@
             letter-spacing: 1px;
         }
 
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
 
         .nav-links a {
             text-decoration: none;
