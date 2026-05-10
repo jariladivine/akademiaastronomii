@@ -87,28 +87,48 @@
             font-size: 2rem;
         }
         .hero-box {
-    text-align: center; 
-    padding: 5rem 1rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: var(--radius); 
-    color: #fff; 
-    margin-bottom: 3rem;
-    box-shadow: var(--shadow);
-}
-.hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #ffffff;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-.hero-content p {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 400;
-}
+            text-align: center; 
+            padding: 5rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius); 
+            color: #fff; 
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #ffffff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+        }
+        .category-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .category-title {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        .category-title:hover {
+            transform: translateY(-3px);
+            background-color: var(--accent-color);
+        }
         .levels-container {
             display: flex;
             justify-content: center;
@@ -244,11 +264,11 @@
     </header>
     <main>
         <section class="hero-box">
-    <div class="hero-content">
-        <h1>Nasze Kursy</h1>
-        <p>Wybierz kurs dopasowany do Twojego poziomu — od podstaw astronomii po zaawansowaną astrofotografię.</p>
-    </div>
-</section>
+            <div class="hero-content">
+                <h1>Nasze Kursy</h1>
+                <p>Wybierz kurs dopasowany do Twojego poziomu — od podstaw astronomii po zaawansowaną astrofotografię.</p>
+            </div>
+        </section>
         <section>
             <div class="section-header"><h2>Poziomy kursów</h2></div>
             <div class="levels-container">
@@ -305,16 +325,22 @@
                     </tbody>
                 </table>
             </div>
-        </section>
+                <div class="section-header"><h2>Co zyskujesz?</h2></div>
+            <div class="category-container">
+                <div class="category-title">📚 Materiały</div>
+                <div class="category-title">🎓 Certyfikat</div>
+                <div class="category-title">🔭 Obserwacje</div>
+                <div class="category-title">👥 Społeczność</div>
+            </div>
+            </section>
         <section style="text-align: center;">
             <div class="section-header" style="text-align: left;"><h2>Zapisz się</h2></div>
-            <p>Dołącz do setek pasjonatów nieba i zacznij swoją przygodę już dziś.</p>
-            <a href="kontakt.html" class="cta-pulse">📩 Zapisz się na kurs teraz!</a>
+            <a href="kontakt.html" class="cta-pulse">📩 Zapisz się na kurs już dziś!</a>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
+        <p>© 2026 Akademia Astronomii - Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
             <a href="o-nas.html">O nas</a> · <a href="kursy.html">Kursy</a> · <a href="galeria.html">Galeria</a> · <a href="kontakt.html">Kontakt</a>
         </div>
