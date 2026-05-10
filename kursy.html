@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Akademia Astronomii - nasze kursy. Wybierz poziom i zacznij przygodę z kosmosem.">
+    <meta name="description" content="O Akademii Astronomii - nasz zespół, misja i historia. Edukacja astronomiczna dla wszystkich.">
     <title>Akademia Astronomii - Kursy</title>
     <style>
-         :root {
+        :root {
             --primary-color: #6c5ce7;      /* Fiolet */
             --secondary-color: #00cec9;    /* Turkus */
             --accent-color: #fd79a8;       /* Różowy */
@@ -28,6 +28,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: var(--font-size);
@@ -58,7 +59,7 @@
             letter-spacing: 1px;
         }
 
-       .nav-links {
+        .nav-links {
             list-style: none;
             display: flex;
             gap: 1.5rem;
@@ -77,7 +78,19 @@
             background-color: var(--primary-color);
             color: #fff;
         }
-      .section-header {
+
+        /* --- UKŁAD GŁÓWNY --- */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
             border-left: 4px solid var(--primary-color);
             padding-left: 1rem;
             margin-bottom: 1.5rem;
@@ -88,6 +101,21 @@
             margin-bottom: 0.5em;
         }
 
+        /* --- HERO --- */
+        .hero-box {
+            text-align: center; 
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius); 
+            color: #fff; 
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-box h1 {
+            color: #e8e8e8;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
         /* --- HERO --- */
         .hero-box {
             text-align: center; 
