@@ -7,105 +7,119 @@
     <title>Akademia Astronomii - Galeria</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- MGŁAWICE: NAKŁADKA (OVERLAY) --- */
+        /* --- MGŁAWICE: ZAAWANSOWANY OVERLAY --- */
         .nebula-container {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            height: 300px;
+            height: 350px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
         }
+
         .nebula-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            transition: transform 0.5s ease;
         }
+
         .nebula-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.2));
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end;
             padding: 2rem;
-            text-align: center;
-            color: #fff;
-            transition: background 0.3s;
-        }
-        .nebula-container:hover .nebula-overlay {
-            background: rgba(0, 0, 0, 0.4);
+            opacity: 0.9;
+            transition: opacity 0.3s;
         }
 
-        /* --- FAKTY: SIATKA --- */
+        .nebula-overlay h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
+        .nebula-overlay p { color: #fff; font-size: 0.9rem; transform: translateY(10px); transition: transform 0.3s; }
+
+        .nebula-container:hover img { transform: scale(1.1); }
+        .nebula-container:hover .nebula-overlay { opacity: 1; }
+        .nebula-container:hover p { transform: translateY(0); }
+
+        /* --- FAKTY: NOWOCZESNA SIATKA --- */
         .facts-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
+
         .fact-item {
             background: var(--card-bg);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
-        }
-        .fact-full-width {
-            grid-column: 1 / -1;
+            transition: border-color 0.3s;
         }
 
-        /* --- KOLORY KOSMOSU: KAFLE --- */
+        .fact-item:hover { border-color: var(--primary-color); }
+        .fact-item h4 { color: var(--secondary-color); margin-bottom: 1rem; }
+        .fact-full-width { grid-column: 1 / -1; border-left: 4px solid var(--accent-color); }
+
+        /* --- KOLORY KOSMOSU: INTERAKTYWNE KAFLE --- */
         .color-tiles-container {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        .color-tile {
-            width: 100px;
-            height: 100px;
-            border-radius: 12px;
-            display: flex;
-            align-items: flex-end;
             justify-content: center;
-            padding: 10px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: white;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-            border: 2px solid rgba(255,255,255,0.1);
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .color-tile:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255,255,255,0.5);
-        }
-
-        /* --- KATEGORIE: PRZYCISKI --- */
-        .category-buttons {
-            text-align: center;
             margin-top: 2rem;
         }
-        .category-btn {
-            display: inline-block;
-            width: 150px;
-            padding: 1rem;
-            margin: 5px;
+
+        .color-tile {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            border: 3px solid rgba(255,255,255,0.1);
             text-align: center;
-            background: rgba(253, 121, 168, 0.2);
-            border: 1px solid rgba(253, 121, 168, 0.3);
-            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .color-tile:hover {
+            transform: translateY(-10px) rotate(3deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border-color: #fff;
+        }
+
+        /* --- KATEGORIE: PRZYCISKI MODERNE --- */
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
             color: var(--text-color);
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s;
         }
+
         .category-btn:hover {
-            background: rgba(253, 121, 168, 0.4);
-            transform: scale(1.05);
+            background: var(--primary-color);
             color: #fff;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
         }
     </style>
 </head>
@@ -127,99 +141,98 @@
     <main>
         <section class="hero-box">
             <div class="hero-content">
-                <h1>Galeria kosmiczna</h1>
-                <p>Odkryj piękno, jakie kryje kosmos na zdjęciach z najdalszych zakątków galaktyki.</p>
+                <h1>Galeria Wszechświata</h1>
+                <p>Zatrzymaj się i spójrz w górę. Oto najpiękniejsze obiekty zarejestrowane przez nasze teleskopy.</p>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Planety</h2></div>
+            <div class="section-header"><h2>Portrety Planet</h2></div>
             <div class="grid-container">
                 <article class="card">
                     <img src="https://picsum.photos/seed/mars/600/400" alt="Mars">
                     <h3>Mars</h3>
-                    <p>Czerwona Planeta — posiada najwyższy wulkan Olympus Mons.</p>
+                    <p>Czerwona Planeta — dom dla najwyższego wulkanu w Układzie Słonecznym.</p>
                 </article>
                 <article class="card">
                     <img src="https://picsum.photos/seed/jupiter/600/400" alt="Jowisz">
                     <h3>Jowisz</h3>
-                    <p>Największa planeta z Wielką Czerwoną Plamą.</p>
+                    <p>Gazowy olbrzym, którego masa jest dwa razy większa niż wszystkich pozostałych planet razem wziętych.</p>
                 </article>
                 <article class="card">
                     <img src="https://picsum.photos/seed/saturn/600/400" alt="Saturn">
                     <h3>Saturn</h3>
-                    <p>Władca pierścieni z lodu i skał.</p>
+                    <p>Klejnot nieba słynący z najbardziej rozbudowanego systemu pierścieni.</p>
                 </article>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Mgławice</h2></div>
+            <div class="section-header"><h2>Gwiezdne Mgławice</h2></div>
             <div class="grid-container">
                 <div class="nebula-container">
                     <img src="https://picsum.photos/seed/nebula1/600/400" alt="Mgławica Oriona">
                     <div class="nebula-overlay">
                         <h3>Mgławica Oriona (M42)</h3>
-                        <p>Żłobek gwiezdny oddalony o 1344 lata świetlne.</p>
+                        <p>Najbliższy nam obszar powstawania nowych gwiazd.</p>
                     </div>
                 </div>
                 <div class="nebula-container">
                     <img src="https://picsum.photos/seed/nebula2/600/400" alt="Mgławica Krab">
                     <div class="nebula-overlay">
                         <h3>Mgławica Krab (M1)</h3>
-                        <p>Pozostałość po supernowej z roku 1054.</p>
+                        <p>Wielobarwny ślad po potężnej eksplozji supernowej.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Fakty o wszechświecie</h2></div>
+            <div class="section-header"><h2>Fakty i Skala</h2></div>
             <div class="facts-grid">
                 <div class="fact-item">
-                    <h4>🌍 Wiek Ziemi</h4>
-                    <p>4,54 miliarda lat</p>
+                    <h4>🌍 Błękitna kropka</h4>
+                    <p>Ziemia ma około 4,54 miliarda lat i jest jedynym znanym miejscem z życiem.</p>
                 </div>
                 <div class="fact-item">
-                    <h4>☀️ Wiek Słońca</h4>
-                    <p>4,6 miliarda lat</p>
+                    <h4>☀️ Serce systemu</h4>
+                    <p>Słońce stanowi 99,86% całkowitej masy całego Układu Słonecznego.</p>
                 </div>
                 <div class="fact-item fact-full-width">
-                    <h4>🌌 Wiek wszechświata</h4>
-                    <p>13,8 miliarda lat — od Wielkiego Wybuchu do dziś. Patrząc w niebo, patrzymy w przeszłość wszechświata.</p>
+                    <h4>🌌 Nieskończona przeszłość</h4>
+                    <p>Wszechświat ma 13,8 miliarda lat. Kiedy fotografujemy galaktykę oddaloną o milion lat świetlnych, widzimy ją taką, jaka była milion lat temu.</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Kolory kosmosu</h2></div>
-            <p class="dropcap">Kosmos nie jest czarno-biały. Każdy kolor niesie informację o temperaturze i gazach.</p>
+            <div class="section-header"><h2>Spektrum Kosmosu</h2></div>
+            <p style="text-align: center; color: var(--text-muted);">Kliknij w kolor, aby dowiedzieć się, co oznacza w astronomii:</p>
             <div class="color-tiles-container">
-                <a href="#" class="color-tile" style="background-color: #c0392b;">Supernowa</a>
-                <a href="#" class="color-tile" style="background-color: rgb(41, 128, 185);">Gwiazda B</a>
-                <a href="#" class="color-tile" style="background-color: rgba(155, 89, 182, 0.8);">Mgławica</a>
-                <a href="#" class="color-tile" style="background-color: hsl(45, 100%, 51%);">Słońce</a>
-                <a href="#" class="color-tile" style="background-color: coral;">Mars</a>
+                <a href="#" class="color-tile" style="background-color: #c0392b;">Wodór (H-alpha)</a>
+                <a href="#" class="color-tile" style="background-color: #2980b9;">Gorące gwiazdy</a>
+                <a href="#" class="color-tile" style="background-color: #8e44ad;">Tlen (OIII)</a>
+                <a href="#" class="color-tile" style="background-color: #f1c40f;">Hel</a>
+                <a href="#" class="color-tile" style="background-color: #e67e22;">Tlenki żelaza</a>
             </div>
         </section>
 
         <section>
-            <div class="section-header"><h2>Kategorie zdjęć</h2></div>
+            <div class="section-header"><h2>Filtruj Galerię</h2></div>
             <div class="category-buttons">
                 <a href="#" class="category-btn">🪐 Planety</a>
                 <a href="#" class="category-btn">⭐ Gwiazdy</a>
                 <a href="#" class="category-btn">🌌 Mgławice</a>
                 <a href="#" class="category-btn">🔭 Galaktyki</a>
-                <a href="#" class="category-btn">🌙 Księżyce</a>
                 <a href="#" class="category-btn">☄️ Komety</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii — wiedza o kosmosie dla każdego</p>
+        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
-            <a href="kursy.html">← Kursy</a> · <a href="kontakt.html">Kontakt →</a>
+            <a href="kursy.html">← Nasze Kursy</a> · <a href="index.html">Powrót do startu</a> · <a href="kontakt.html">Kontakt →</a>
         </div>
     </footer>
 
