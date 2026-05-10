@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Akademia Astronomii - odkryj tajemnice kosmosu. Kursy, artykuły i galeria zdjęć.">
-    <title>Akademia Astronomii - Strona główna</title>
+    <title>Akademia Astronomii - Strona Główna</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
         <nav>
@@ -24,108 +22,38 @@
 
     <main>
         <section class="hero-box">
-            <div class="hero-content">
-                <h1>Odkryj Tajemnice Kosmosu</h1>
-                <p>Wyrusz w fascynującą podróż po Układzie Słonecznym, odległych galaktykach i tajemnicach ciemnej materii.</p>
-                <a href="kursy.html" class="btn btn--cta">Rozpocznij naukę →</a>
-            </div>
-        </section>
-
-        <section aria-labelledby="events-title">
-            <div class="section-header">
-                <h2 id="events-title">Nadchodzące wydarzenia</h2>
-            </div>
-            <div class="table-wrapper">
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Wydarzenie</th>
-                            <th>Data</th>
-                            <th>Widoczność</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Deszcz Perseidów</td><td>12 Sierpnia</td><td>Wysoka</td></tr>
-                        <tr><td>Opozycja Jowisza</td><td>20 Sierpnia</td><td>Bardzo dobra</td></tr>
-                        <tr><td>Zaćmienie Księżyca</td><td>18 Września</td><td>Średnia</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section aria-labelledby="topics-title">
-            <div class="section-header">
-                <h2 id="topics-title">Popularne tematy</h2>
-            </div>
-            <div class="grid-container">
-                <article class="card">
-                    <img src="https://picsum.photos/seed/planets/600/400" alt="Planety">
-                    <h3>Planety</h3>
-                    <p>Od Merkurego po lodowego Neptuna.</p>
-                    <a href="kursy.html" class="btn btn--more">Dowiedz się więcej</a>
-                </article>
-                <article class="card">
-                    <img src="https://picsum.photos/seed/stars/600/400" alt="Gwiazdy">
-                    <h3>Gwiazdy</h3>
-                    <p>Jak rodzą się słońca? Czym jest supernowa?</p>
-                    <a href="kursy.html" class="btn btn--more">Dowiedz się więcej</a>
-                </article>
-                <article class="card">
-                    <img src="https://picsum.photos/seed/galaxy/600/400" alt="Galaktyki">
-                    <h3>Galaktyki</h3>
-                    <p>Poznaj strukturę kosmosu.</p>
-                    <a href="galeria.html" class="btn btn--more">Dowiedz się więcej</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="info-section">
-            <div class="section-header"><h2>Czy wiesz, że...</h2></div>
-            <p class="dropcap">Światło ze Słońca potrzebuje około 8 minut i 20 sekund, aby dotrzeć do Ziemi. Patrzymy dosłownie w przeszłość wszechświata.</p>
+            <h1>Odkryj tajemnice kosmosu</h1>
+            <p>Dołącz do największej społeczności pasjonatów astronomii i poznaj wszechświat, który nas otacza.</p>
+            <a href="kursy.html" class="btn btn-secondary" style="margin-top: 1.5rem;">Zacznij naukę</a>
         </section>
 
         <section>
-            <div class="banner-subtle">
-                🚀 Nowy kurs „Astrofotografia dla początkujących" już dostępny!
+            <div class="section-header"><h2>Wszechświat w pigułce</h2></div>
+            <p class="dropcap">Światło ze Słońca potrzebuje około 8 minut i 20 sekund, aby dotrzeć do Ziemi. To pokazuje, jak ogromne są odległości w naszej najbliższej okolicy kosmicznej. Astronomia pozwala nam zrozumieć nie tylko to, co widzimy, ale i naszą własną historię.</p>
+        </section>
+
+        <section>
+            <div class="banner-astro">
+                <p>✨ <strong>Astrofotografia:</strong> Uchwyć piękno nocnego nieba dzięki naszym warsztatom. ✨</p>
             </div>
         </section>
 
-        <section class="quote-section">
-            <img src="https://picsum.photos/seed/space/1100/450" alt="Ziemia">
-            <div class="quote-overlay">
-                <blockquote>„Ziemia to kolebka ludzkości, ale nie można wiecznie żyć w kolebce” — K. Ciołkowski</blockquote>
-            </div>
-        </section>
-
-        <section aria-labelledby="newsletter-title">
-            <div class="section-header">
-                <h2 id="newsletter-title">Bądź na bieżąco</h2>
-            </div>
-            <div class="form-container">
-                <form id="newsletter-form">
-                    <div class="form-group">
-                        <label for="email">Twój adres e-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="adres@e-mail.pl" required>
-                    </div>
-                    <button type="submit" class="btn btn--cta">Zapisz się do Newslettera</button>
-                </form>
+        <section style="position: relative; border-radius: 12px; overflow: hidden; height: 300px;">
+            <img src="https://picsum.photos/seed/stars/1200/400" alt="Kosmos" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 2rem;">
+                <blockquote style="font-size: 1.5rem; font-weight: 600; font-style: italic;">
+                    "Gdzieś coś niesamowitego czeka na odkrycie." <br>
+                    <span style="font-size: 1rem; font-style: normal; font-weight: 400;">— Carl Sagan</span>
+                </blockquote>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
-        <div class="footer-links">
-            <a href="o-nas.html">O nas</a> · <a href="kursy.html">Kursy</a> · <a href="galeria.html">Galeria</a> · <a href="kontakt.html">Kontakt</a>
+        <p>© 2026 Akademia Astronomii — wiedza o kosmosie dla każdego</p>
+        <div class="footer-links" style="margin-top: 10px;">
+            <a href="o-nas.html">Poznaj nas lepiej</a>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dziękujemy! Zostałeś zapisany do newslettera.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
