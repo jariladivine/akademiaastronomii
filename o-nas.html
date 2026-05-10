@@ -6,22 +6,23 @@
     <meta name="description" content="O Akademii Astronomii - nasz zespół, misja i historia. Edukacja astronomiczna dla wszystkich.">
     <title>Akademia Astronomii - O nas</title>
     <style>
-       :root {
-            --primary-color: #6c5ce7;      /* Fiolet */
-            --secondary-color: #00cec9;    /* Turkus */
-            --accent-color: #fd79a8;       /* Różowy */
-            --dark-bg: #1e1e2e;            /* Ciemne tło główne */
-            --card-bg: #2a2a3e;            /* Tło kart i sekcji */
-            --text-color: #e0e0e0;          /* Jasny tekst */
-            --text-muted: #a0a0b0;          /* Przygaszony tekst */
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #00cec9;
+            --accent-color: #fd79a8;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3e;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0b0;
             --border-color: #3a3a4e;
-            --heading-color: #73C0F1;      /* Jasnoniebieski dla nagłówków */
+            --heading-color: #73C0F1;
             --font-size: 16px;
             --radius: 12px;
             --shadow: 0 4px 20px rgba(0,0,0,0.5);
             --transition-speed: 0.3s;
         }
 
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -37,26 +38,26 @@
             overflow-x: hidden;
         }
 
-        /* --- ZMODYFIKOWANY NAGŁÓWEK --- */
+        /* --- NAGŁÓWEK (MENU) --- */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
             display: flex;
-             justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 0.8rem 10%;
+            padding: 1.5rem 1rem;
             background: rgba(30, 30, 46, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
         }
 
         .service-name {
-            font-size: 1.4rem;      /* Większy rozmiar */
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--heading-color);
             letter-spacing: 1px;
-  /* Odstęp od linków */
+            margin-bottom: 1rem;
         }
 
         .nav-links {
@@ -68,9 +69,9 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
-            font-weight: 500;       /* Grubsza czcionka */
-            padding: 0.4rem 0.8rem; /* Większy obszar klikalny */
-            border-radius: 6px;
+            font-weight: 700;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
             transition: all var(--transition-speed);
         }
 
@@ -96,7 +97,11 @@
             margin-bottom: 1.5rem;
         }
 
-      
+        h1, h2, h3, h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.5em;
+        }
+
         /* --- HERO --- */
         .hero-box {
             text-align: center; 
@@ -128,27 +133,116 @@
             margin: 0;
         }
 
-        /* --- RESZTA STYLÓW BEZ ZMIAN --- */
-        .mission-text::first-line { font-weight: 700; color: var(--secondary-color); }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .team-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 2rem; text-align: center; transition: transform var(--transition-speed); }
-        .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .team-photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid var(--primary-color); }
-        .team-card h4 { color: var(--secondary-color); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1rem; }
-        .history-list { list-style: none; border: 1px solid var(--border-color); border-radius: var(--radius); overflow: hidden; }
-        .history-list li { padding: 1rem; border-bottom: 1px solid var(--border-color); }
+        /* --- TREŚĆ --- */
+        .mission-text::first-line {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            transition: transform var(--transition-speed);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--primary-color);
+        }
+
+        .team-card h4 {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .history-list {
+            list-style: none;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .history-list li {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         .history-list li:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
         .history-list li:first-child { color: var(--secondary-color); font-weight: bold; }
         .history-list li:last-child { color: var(--accent-color); font-weight: bold; border-bottom: none; }
-        .table-wrapper { overflow-x: auto; margin: 2rem 0; border-radius: var(--radius); border: 2px solid var(--heading-color); }
-        .styled-table { width: 100%; border-collapse: collapse; background: var(--card-bg); min-width: 400px; }
-        .styled-table th { background: var(--heading-color); color: var(--dark-bg); padding: 1rem; text-align: left; }
-        .styled-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
-        footer { text-align: center; padding: 3rem 1.5rem; background: var(--card-bg); border-top: 1px solid var(--border-color); margin-top: 4rem; }
-        .footer-links { margin-top: 1rem; }
-        .footer-links a { color: var(--heading-color); text-decoration: none; margin: 0 10px; transition: color var(--transition-speed); }
-        .footer-links a:hover { color: var(--primary-color); }
 
+        /* --- TABELA --- */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            border: 2px solid var(--heading-color);
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            min-width: 400px;
+        }
+
+        .styled-table th {
+            background: var(--heading-color);
+            color: var(--dark-bg);
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* --- STOPKA --- */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--heading-color);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- RESPONSYWNOŚĆ --- */
         @media (max-width: 768px) {
             .nav-links { gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
             .nav-links a { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
