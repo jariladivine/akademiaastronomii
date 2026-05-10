@@ -1,42 +1,291 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <!-- Podstawowe metadane strony: kodowanie znaków, responsywność i opis dla wyszukiwarek -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akademia Astronomii - odkryj tajemnice kosmosu. Kursy, artykuły i galeria zdjęć.">
     <title>Akademia Astronomii - Strona główna</title>
-    <!-- Podpięcie zewnętrznego arkusza stylów CSS -->
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #00cec9;
+            --accent-color: #fd79a8;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3e;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0b0;
+            --border-color: #3a3a4e;
+            --heading-color: #73C0F1;
+            --font-size: 16px;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.5);
+            --transition-speed: 0.3s;
+        }
+
+        /* --- RESET I BAZA --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: var(--font-size);
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden; /* Zapobiega przypadkowemu przewijaniu na boki */
+        }
+
+        /* Obrazy dopasowujące się do szerokości ekranu */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- NAGŁÓWEK --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+            background: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .service-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* --- UKŁAD GŁÓWNY --- */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1, h2, h3 { color: var(--heading-color); margin-bottom: 0.5em; }
+        h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); } /* Dynamiczna wielkość czcionki */
+
+        /* --- HERO --- */
+        .hero-box {
+            text-align: center;
+            padding: clamp(2rem, 8vw, 5rem) 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius);
+            color: #fff;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content { max-width: 700px; margin: 0 auto; }
+        .hero-content h1 { color: #fff; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9); }
+
+        /* --- RESPONSYWNA TABELA --- */
+        .table-wrapper {
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            overflow-x: auto; /* Scroll poziomy na telefonach */
+            border: 2px solid var(--heading-color);
+            box-shadow: var(--shadow);
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            min-width: 500px; /* Zapobiega ściskaniu kolumn */
+        }
+
+        .styled-table th {
+            background: var(--heading-color);
+            color: var(--dark-bg);
+            padding: 1rem;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .styled-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
+
+        /* --- SIATKA KART --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: transform var(--transition-speed);
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .card img { border-radius: 8px; margin-bottom: 1rem; width: 100%; height: 200px; object-fit: cover; }
+
+        /* --- PRZYCISKI --- */
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-speed);
+            border: none;
+            text-align: center;
+        }
+        .btn--cta { background: var(--secondary-color); color: var(--dark-bg); }
+        .btn--more { background: var(--primary-color); color: #fff; margin-top: 1rem; }
+        .btn:hover { transform: scale(1.03); opacity: 0.9; }
+
+        /* --- ANIMACJE I DODATKI --- */
+        .banner-subtle {
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            animation: bluePulse 4s infinite;
+        }
+
+        @keyframes bluePulse {
+            0%, 100% { background-color: #1e1e2e; box-shadow: 0 0 0px rgba(88,166,255,0); }
+            50% { background-color: #1f6feb; box-shadow: 0 0 20px rgba(88,166,255,0.4); }
+        }
+
+        .dropcap::first-letter {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            float: left;
+            margin-right: 12px;
+            line-height: 0.8;
+        }
+
+        /* --- NEWSLETTER --- */
+        .form-container {
+            background: var(--card-bg);
+            padding: clamp(1.5rem, 5vw, 3rem);
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            max-width: 350px;
+            padding: 0.8rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* --- CYTAT --- */
+        .quote-section { position: relative; border-radius: var(--radius); overflow: hidden; height: 300px; }
+        .quote-section img { width: 100%; height: 100%; object-fit: cover; }
+        .quote-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+            display: flex; justify-content: center; align-items: center; padding: 1.5rem;
+        }
+        blockquote { color: #fff; font-size: clamp(1rem, 4vw, 1.4rem); text-align: center; font-style: italic; }
+
+        /* --- STOPKA --- */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-links { margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .footer-links a { color: var(--heading-color); text-decoration: none; }
+
+        /* --- MEDIA QUERIES (RESPONSYWNOŚĆ) --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links a { font-size: 0.85rem; padding: 0.3rem 0.5rem; }
+            section { margin-bottom: 2.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-box { border-radius: 0; margin-left: -1.5rem; margin-right: -1.5rem; } /* Hero na całą szerokość na mobile */
+            .card { padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Pasek nawigacji przyklejony do góry strony -->
     <header>
         <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
         <nav>
             <ul class="nav-links">
-                <!-- Linki nawigacyjne; klasa 'active' wyróżnia bieżącą stronę -->
-                <li><a href="index.html" class="active">Strona Główna</a></li>
-                <li><a href="o-nas.html">O nas</a></li>
-                <li><a href="kursy.html">Kursy</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="#" class="active">Strona Główna</a></li>
+                <li><a href="#">O nas</a></li>
+                <li><a href="#">Kursy</a></li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Sekcja Hero: główny baner powitalny z przyciskiem akcji (CTA) -->
         <section class="hero-box">
             <div class="hero-content">
                 <h1>Odkryj Tajemnice Kosmosu</h1>
-                <p>Wyrusz w fascynującą podróż po Układzie Słonecznym, odległych galaktykach i tajemnicach ciemnej materii.</p>
-                <a href="kursy.html" class="btn btn--cta">Rozpocznij naukę →</a>
+                <p>Wyrusz w fascynującą podróż po Układzie Słonecznym i odległych galaktykach.</p>
+                <a href="#" class="btn btn--cta">Rozpocznij naukę →</a>
             </div>
         </section>
 
-        <!-- Sekcja z tabelą: harmonogram nadchodzących zjawisk astronomicznych -->
         <section aria-labelledby="events-title">
             <div class="section-header">
                 <h2 id="events-title">Nadchodzące wydarzenia</h2>
@@ -59,64 +308,56 @@
             </div>
         </section>
 
-        <!-- Sekcja Popularne tematy: układ kafelkowy (Grid) prezentujący kategorie -->
         <section aria-labelledby="topics-title">
             <div class="section-header">
                 <h2 id="topics-title">Popularne tematy</h2>
             </div>
             <div class="grid-container">
-                <!-- Pojedyncza karta tematyczna -->
                 <article class="card">
                     <img src="https://picsum.photos/seed/planets/600/400" alt="Planety">
                     <h3>Planety</h3>
                     <p>Od Merkurego po lodowego Neptuna.</p>
-                    <a href="kursy.html" class="btn btn--more">Dowiedz się więcej</a>
+                    <a href="#" class="btn btn--more">Dowiedz się więcej</a>
                 </article>
                 <article class="card">
                     <img src="https://picsum.photos/seed/stars/600/400" alt="Gwiazdy">
                     <h3>Gwiazdy</h3>
                     <p>Jak rodzą się słońca? Czym jest supernowa?</p>
-                    <a href="kursy.html" class="btn btn--more">Dowiedz się więcej</a>
+                    <a href="#" class="btn btn--more">Dowiedz się więcej</a>
                 </article>
                 <article class="card">
                     <img src="https://picsum.photos/seed/galaxy/600/400" alt="Galaktyki">
                     <h3>Galaktyki</h3>
-                    <p>Poznaj strukturę kosmosu.</p>
-                    <a href="galeria.html" class="btn btn--more">Dowiedz się więcej</a>
+                    <p>Poznaj strukturę kosmosu i czarne dziury.</p>
+                    <a href="#" class="btn btn--more">Dowiedz się więcej</a>
                 </article>
             </div>
         </section>
 
-        <!-- Ciekawostka z zastosowaniem ozdobnego inicjału (Dropcap) -->
         <section class="info-section">
             <div class="section-header"><h2>Czy wiesz, że...</h2></div>
-            <p class="dropcap">Światło ze Słońca potrzebuje około 8 minut i 20 sekund, aby dotrzeć do Ziemi. Patrzymy dosłownie w przeszłość wszechświata.</p>
+            <p class="dropcap">Światło ze Słońca potrzebuje około 8 minut i 20 sekund, aby dotrzeć do Ziemi. Patrzymy dosłownie w przeszłość wszechświata, widząc stan gwiazd sprzed wielu lat.</p>
         </section>
 
-        <!-- Dynamiczny baner reklamowy z animacją pulsowania -->
         <section>
             <div class="banner-subtle">
                 🚀 Nowy kurs „Astrofotografia dla początkujących" już dostępny!
             </div>
         </section>
 
-        <!-- Sekcja cytatu z tłem obrazkowym i nakładką (overlay) -->
         <section class="quote-section">
-            <img src="https://picsum.photos/seed/space/1100/450" alt="Ziemia">
+            <img src="https://picsum.photos/seed/space/1100/450" alt="Ziemia widoczna z kosmosu">
             <div class="quote-overlay">
                 <blockquote>„Ziemia to kolebka ludzkości, ale nie można wiecznie żyć w kolebce” — K. Ciołkowski</blockquote>
             </div>
         </section>
 
-        <!-- Sekcja Newslettera: formularz zapisu -->
         <section aria-labelledby="newsletter-title">
-            <div class="section-header">
-                <h2 id="newsletter-title">Bądź na bieżąco</h2>
-            </div>
             <div class="form-container">
+                <h2 id="newsletter-title">Bądź na bieżąco</h2>
                 <form id="newsletter-form">
                     <div class="form-group">
-                        <label for="email">Twój adres e-mail:</label>
+                        <label for="email">Twój adres e-mail:</label><br><br>
                         <input type="email" id="email" name="email" placeholder="adres@e-mail.pl" required>
                     </div>
                     <button type="submit" class="btn btn--cta">Zapisz się do Newslettera</button>
@@ -125,20 +366,18 @@
         </section>
     </main>
 
-    <!-- Stopka strony z prawami autorskimi i powtórzoną nawigacją -->
     <footer>
         <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
-            <a href="o-nas.html">O nas</a> · <a href="kursy.html">Kursy</a> · <a href="galeria.html">Galeria</a> · <a href="kontakt.html">Kontakt</a>
+            <a href="#">O nas</a> · <a href="#">Kursy</a> · <a href="#">Galeria</a> · <a href="#">Kontakt</a>
         </div>
     </footer>
 
-    <!-- Skrypt obsługujący wysyłkę formularza bez przeładowania strony -->
     <script>
         document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Zatrzymanie domyślnej akcji wysłania
+            e.preventDefault();
             alert('Dziękujemy! Zostałeś zapisany do newslettera.');
-            this.reset(); // Czyszczenie pola po zapisie
+            this.reset();
         });
     </script>
 </body>
