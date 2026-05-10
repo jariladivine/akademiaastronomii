@@ -99,10 +99,10 @@
 
         .benefit-tile {
             display: inline-block;
-            background-color: var(--primary-color); /* Zachowany kolor bazowy */
+            background-color: var(--primary-color);
             color: white;
-            padding: 0.7rem 1.8rem; /* Rozmiar jak w .level-btn */
-            border-radius: 50px;     /* Kształt pigułki jak w .level-btn */
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
             font-weight: 600;
             cursor: default;
             transition: transform 0.2s ease, filter 0.2s ease, background-color 0.3s ease;
@@ -110,9 +110,10 @@
         }
 
         .benefit-tile:hover {
-            transform: translateY(-3px); /* Efekt uniesienia jak w .level-btn */
-            filter: brightness(1.2);      /* Efekt rozjaśnienia jak w .level-btn */
-            background-color: var(--accent-color); /* Subtelna zmiana koloru przy hoverze */
+            transform: translateY(-3px);
+            filter: brightness(1.2);
+            background-color: var(--accent-color);
+        }
 
         /* Banner animowany */
         .newsletter-banner {
@@ -126,6 +127,7 @@
             font-weight: bold;
             font-size: 1.2rem;
             box-shadow: var(--shadow);
+            margin-top: 3rem;
         }
 
         @keyframes colorShift {
@@ -147,7 +149,7 @@
 <body>
 
     <header>
-        <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
+        <div class="service-name">🔭 Akademia Astronomii</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Strona Główna</a></li>
@@ -192,7 +194,7 @@
                             <label for="contact-message">Wiadomość</label>
                             <textarea id="contact-message" placeholder="W czym możemy pomóc?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn--cta" style="width: 100%; margin-top: 1rem;">Wyślij wiadomość 📩</button>
+                        <button type="submit" class="btn btn--more" style="width: 100%; margin-top: 1rem;">Wyślij wiadomość 📩</button>
                     </form>
                 </article>
 
@@ -248,12 +250,12 @@
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii — wiedza o kosmosie dla każdego</p>
+        <p>© 2026 Akademia Astronomii — Wiedza o kosmosie dla każdego</p>
         <div class="footer-links">
-            <a href="index.html">Strona Główna</a> · 
             <a href="o-nas.html">O nas</a> · 
             <a href="kursy.html">Kursy</a> · 
-            <a href="galeria.html">Galeria</a>
+            <a href="galeria.html">Galeria</a> · 
+            <a href="kontakt.html">Kontakt</a>
         </div>
     </footer>
 
