@@ -278,6 +278,32 @@
             margin-top: 1rem;
             border: 1px solid var(--border-color);
         }
+      footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--heading-color);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
       
       /* --- RESPONSYWNOŚĆ --- */
         @media (max-width: 768px) {
@@ -292,6 +318,7 @@
         @media (max-width: 480px) {
             main { padding: 1rem 0.5rem; }
             .grid-container { grid-template-columns: 1fr; }
+          
           
     </style>
 </head>
