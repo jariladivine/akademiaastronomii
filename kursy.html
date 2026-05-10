@@ -7,28 +7,25 @@
     <title>Akademia Astronomii - Kursy</title>
     <style>
         :root {
-            --primary-color: #6c5ce7;      /* Fiolet */
-            --secondary-color: #00cec9;    /* Turkus */
-            --accent-color: #fd79a8;       /* Różowy */
-            --dark-bg: #1e1e2e;            /* Ciemne tło główne */
-            --card-bg: #2a2a3e;            /* Tło kart i sekcji */
-            --text-color: #e0e0e0;          /* Jasny tekst */
-            --text-muted: #a0a0b0;          /* Przygaszony tekst */
+            --primary-color: #6c5ce7;
+            --secondary-color: #00cec9;
+            --accent-color: #fd79a8;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3e;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0b0;
             --border-color: #3a3a4e;
-            --heading-color: #73C0F1;      /* Jasnoniebieski dla nagłówków */
+            --heading-color: #73C0F1;
             --font-size: 16px;
             --radius: 12px;
             --shadow: 0 4px 20px rgba(0,0,0,0.5);
             --transition-speed: 0.3s;
         }
-
-        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: var(--font-size);
@@ -37,8 +34,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* --- NAGŁÓWEK --- */
         header {
             position: sticky;
             top: 0;
@@ -51,20 +46,17 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
         }
-
         .service-name {
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--heading-color);
             letter-spacing: 1px;
         }
-
         .nav-links {
             list-style: none;
             display: flex;
             gap: 1.5rem;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
@@ -73,63 +65,50 @@
             border-radius: 6px;
             transition: all var(--transition-speed);
         }
-
         .nav-links a:hover, .nav-links a.active {
             background-color: var(--primary-color);
             color: #fff;
         }
-
-        /* --- UKŁAD GŁÓWNY --- */
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
-
         section {
             margin-bottom: 4rem;
         }
-
         .section-header {
             border-left: 4px solid var(--primary-color);
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
-
         h2 {
             color: var(--heading-color);
             font-size: 2rem;
         }
-
-        /* --- HERO --- */
         .hero-box {
     text-align: center; 
-    padding: 5rem 1rem; /* Zwiększony padding dla lepszego efektu */
+    padding: 5rem 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: var(--radius); 
     color: #fff; 
     margin-bottom: 3rem;
     box-shadow: var(--shadow);
 }
-
 .hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3rem); /* Responsywna wielkość czcionki */
+    font-size: clamp(2rem, 5vw, 3rem);
     color: #ffffff;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
-
 .hero-content p {
     font-size: clamp(1rem, 3vw, 1.25rem);
     max-width: 700px;
-    margin: 0 auto 2rem auto; /* Wyśrodkowanie tekstu i margines pod nim */
+    margin: 0 auto 2rem auto;
     color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
 }
-
-
-        /* --- PRZYCISKI POZIOMÓW --- */
         .levels-container {
             display: flex;
             justify-content: center;
@@ -140,7 +119,6 @@
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
         }
-
         .level-btn {
             padding: 0.7rem 1.8rem;
             border-radius: 50px;
@@ -150,20 +128,16 @@
             cursor: pointer;
             transition: transform 0.2s ease, filter 0.2s ease;
         }
-
         .level-btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
         .level-btn:nth-child(1) { background-color: var(--primary-color); }
         .level-btn:nth-child(2) { background-color: var(--secondary-color); }
         .level-btn:nth-child(3) { background-color: var(--accent-color); }
-
-        /* --- SIATKA KART --- */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
-
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -173,9 +147,7 @@
             display: flex;
             flex-direction: column;
         }
-
         .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-
         .card img {
             width: 100%;
             height: 180px;
@@ -183,10 +155,7 @@
             border-radius: 8px;
             margin-bottom: 1rem;
         }
-
         .card h3 { color: var(--heading-color); margin-bottom: 0.5rem; }
-
-        /* --- TABELA --- */
         .table-wrapper {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -195,13 +164,10 @@
             border: 2px solid var(--heading-color);
             box-shadow: var(--shadow);
         }
-
         .styled-table { width: 100%; border-collapse: collapse; background: var(--card-bg); min-width: 600px; }
         .styled-table th { background: var(--heading-color); color: var(--dark-bg); padding: 1rem; text-align: left; text-transform: uppercase; font-size: 0.9rem; }
         .styled-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
         .styled-table tr:hover { background: rgba(88, 166, 255, 0.1); }
-
-        /* --- PRZYCISKI --- */
         .btn--more {
             display: inline-block;
             padding: 0.7rem 1.5rem;
@@ -211,12 +177,10 @@
             text-decoration: none;
             font-weight: 600;
             text-align: center;
-            margin-top: auto; /* Pcha przycisk na dół karty */
+            margin-top: auto;
             transition: var(--transition-speed);
         }
-
         .btn--more:hover { filter: brightness(1.1); transform: scale(1.02); }
-
         .cta-pulse {
             display: inline-block;
             font-size: 1.3rem;
@@ -230,14 +194,11 @@
             margin-top: 1rem;
             transition: var(--transition-speed);
         }
-
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(253, 121, 168, 0.7); }
             70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(253, 121, 168, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(253, 121, 168, 0); }
         }
-
-        /* --- STOPKA --- */
         footer {
             text-align: center;
             padding: 3rem 1.5rem;
@@ -245,18 +206,13 @@
             border-top: 1px solid var(--border-color);
             margin-top: 4rem;
         }
-
         footer p { color: var(--text-muted); }
-
         .footer-links { margin-top: 1rem; }
-
         .footer-links a {
             color: var(--heading-color);
             text-decoration: none;
             margin: 0 10px;
         }
-
-        /* --- RESPONSYWNOŚĆ (MEDIA QUERIES) --- */
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 1rem; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
@@ -264,7 +220,6 @@
             h2 { font-size: 1.5rem; }
             .hero-box { padding: 2.5rem 1rem; }
         }
-
         @media (max-width: 480px) {
             main { padding: 1rem 0.8rem; }
             .levels-container { flex-direction: column; }
@@ -275,7 +230,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <div class="service-name">🔭 Akademia Astronomii</div>
         <nav>
@@ -288,66 +242,54 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <!-- Sekcja Hero -->
         <section class="hero-box">
     <div class="hero-content">
         <h1>Nasze Kursy</h1>
         <p>Wybierz kurs dopasowany do Twojego poziomu — od podstaw astronomii po zaawansowaną astrofotografię.</p>
     </div>
 </section>
-      
-
-        <!-- Filtry poziomów -->
         <section>
-            <div class="section-header"><h2>Poziomy trudności</h2></div>
+            <div class="section-header"><h2>Poziomy kursów</h2></div>
             <div class="levels-container">
                 <button class="level-btn">🌟 Początkujący</button>
                 <button class="level-btn">🔭 Średniozaawansowany</button>
                 <button class="level-btn">🚀 Zaawansowany</button>
             </div>
         </section>
-
-        <!-- Karty kursów -->
         <section>
-            <div class="section-header"><h2>Dostępne programy</h2></div>
+            <div class="section-header"><h2>Oferta kursów</h2></div>
             <div class="grid-container">
                 <article class="card">
                     <img src="https://picsum.photos/seed/solarsystem/600/350" alt="Układ Słoneczny">
                     <h3>Układ Słoneczny</h3>
-                    <p>Poznaj planety, księżyce i pas asteroidów. Kurs idealny na start przygody z astronomią.</p>
+                    <p>Poznaj wszystkie planety, księżyce, pas asteroidów i Pas Kuipera. Kurs idealny na start przygody z astronomią.</p>
                     <p style="margin: 0.5rem 0;"><strong>Czas trwania:</strong> 8 tygodni</p>
                     <a href="kontakt.html" class="btn--more">Zapisz się</a>
                 </article>
-
                 <article class="card">
                     <img src="https://picsum.photos/seed/constellations/600/350" alt="Gwiazdy">
                     <h3>Gwiazdy i konstelacje</h3>
-                    <p>Naucz się rozpoznawać gwiazdozbiory i zrozum cykl życia gwiazd.</p>
+                    <p>Naucz się rozpoznawać gwiazdozbiory na nocnym niebie. Zrozum cykl życia gwiazd - od protogwiazdy po czarną dziurę.</p>
                     <p style="margin: 0.5rem 0;"><strong>Czas trwania:</strong> 10 tygodni</p>
                     <a href="kontakt.html" class="btn--more">Zapisz się</a>
                 </article>
-
                 <article class="card">
                     <img src="https://picsum.photos/seed/deepspace/600/350" alt="Galaktyki">
                     <h3>Galaktyki i kosmologia</h3>
-                    <p>Ciemna materia, czarne dziury i ekspansja wszechświata dla dociekliwych.</p>
+                    <p>Ciemna materia, ciemna energia, Wielki Wybuch — zanurz się w największe tajemnice współczesnej fizyki.</p>
                     <p style="margin: 0.5rem 0;"><strong>Czas trwania:</strong> 12 tygodni</p>
                     <a href="kontakt.html" class="btn--more">Zapisz się</a>
                 </article>
-
                 <article class="card">
                     <img src="https://picsum.photos/seed/astrophoto/600/350" alt="Astrofotografia">
                     <h3>Astrofotografia</h3>
-                    <p>Techniki fotografowania nocnego nieba, obróbka zdjęć i dobór sprzętu.</p>
+                    <p>Naucz się fotografować nocne niebo — od prostych zdjęć smartfonem po zaawansowane techniki z teleskopem.</p>
                     <p style="margin: 0.5rem 0;"><strong>Czas trwania:</strong> 6 tygodni</p>
                     <a href="kontakt.html" class="btn--more">Zapisz się</a>
                 </article>
             </div>
         </section>
-
-        <!-- Harmonogram -->
         <section>
             <div class="section-header"><h2>Harmonogram zajęć</h2></div>
             <div class="table-wrapper">
@@ -364,8 +306,6 @@
                 </table>
             </div>
         </section>
-
-        <!-- CTA Zapisy -->
         <section style="text-align: center;">
             <div class="section-header" style="text-align: left;"><h2>Zapisz się</h2></div>
             <p>Dołącz do setek pasjonatów nieba i zacznij swoją przygodę już dziś.</p>
