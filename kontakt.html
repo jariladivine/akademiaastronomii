@@ -3,61 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Akademia Astronomii</title>
+    <meta name="description" content="Kontakt z Akademią Astronomii - formularz kontaktowy, dane teleadresowe, mapa lokalizacji.">
+    <title>Akademia Astronomii - Kontakt</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- INTEGRACJA STYLI SPECYFICZNYCH DLA KONTAKTU --- */
+        
+        /* Formularz */
+        .contact-form-group {
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+
+        .contact-form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .contact-form-group input, 
+        .contact-form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .contact-form-group input:focus, 
+        .contact-form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(108, 92, 231, 0.3);
+        }
+
+        .contact-form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Lista danych kontaktowych */
+        .contact-details-list h3 {
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            position: relative;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            margin-bottom: 0.6rem;
+            background: var(--dark-bg);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-item::before {
+            content: "✦";
+            position: absolute;
+            left: 1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Mapa Demo */
+        .map-demo-container {
+            min-height: 250px;
+            background: var(--card-bg);
+            border: 2px solid var(--heading-color);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-box-1 { background: rgba(108, 92, 231, 0.2); border: 1px solid var(--primary-color); padding: 15px; border-radius: 8px; margin-bottom: 10px; }
+        .map-box-2 { background: rgba(0, 206, 201, 0.2); border: 1px solid var(--secondary-color); padding: 15px; border-radius: 8px; margin-left: 30px; }
+        .map-box-3 { position: absolute; bottom: 20px; right: 20px; background: var(--accent-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+
+        /* Społeczność */
+        .social-promo-text {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            padding: 1.2rem;
+            text-align: center;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+            font-weight: 600;
+        }
+
+        .social-card:hover {
+            border-color: var(--secondary-color);
+            background: rgba(0, 206, 201, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* Banner animowany */
+        .newsletter-banner {
+            background: linear-gradient(-45deg, #6c5ce7, #2a2a3e, #00cec9);
+            background-size: 400% 400%;
+            animation: colorShift 10s ease infinite;
+            padding: 3rem;
+            border-radius: var(--radius);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        @keyframes colorShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .contact-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <div class="service-name">🔭 Akademia Astronomii</div>
-        <nav><ul class="nav-links">
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="o-nas.html">O nas</a></li>
-            <li><a href="kursy.html">Kursy</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="kontakt.html" class="active">Kontakt</a></li>
-        </ul></nav>
+        <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="o-nas.html">O nas</a></li>
+                <li><a href="kursy.html">Kursy</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section>
-            <div class="section-header"><h2>Napisz do nas</h2></div>
-            <form action="#" method="post" class="card">
-                <div class="form-group">
-                    <label for="name">Imię i nazwisko</label>
-                    <input type="text" id="name" name="name" placeholder="Twoje imię..." required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Twój e-mail..." required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Wiadomość</label>
-                    <textarea id="message" name="message" placeholder="Jak możemy Ci pomóc?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
-            </form>
-        </section>
-
-        <section>
-            <div class="section-header"><h2>Nasza lokalizacja</h2></div>
-            <div class="find-us-container">
-                <div class="box-static">Budynek Obserwatorium</div>
-                <div class="box-relative">Główne wejście (10m w bok)</div>
-                <div class="box-absolute">Punkt Info</div>
+        <section class="hero-box">
+            <div class="hero-content">
+                <h1>Skontaktuj się z nami</h1>
+                <p>Masz pytania o kursy, obserwacje lub współpracę? Napisz do nas — odpowiadamy w ciągu 24 godzin!</p>
             </div>
         </section>
 
         <section>
-            <div class="banner-astro">
-                <h3>NEWSLETTER KOSMICZNY</h3>
-                <p>Zapisz się, aby otrzymywać powiadomienia o zjawiskach astronomicznych.</p>
+            <div class="section-header">
+                <h2>Formularz i Dane</h2>
+            </div>
+            
+            <div class="grid-container">
+                <article class="card">
+                    <h3>Napisz wiadomość</h3>
+                    <form action="#">
+                        <div class="contact-form-group">
+                            <label for="contact-name">Imię i nazwisko</label>
+                            <input type="text" id="contact-name" placeholder="Jan Kowalski" required>
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="contact-email">Adres email</label>
+                            <input type="email" id="contact-email" placeholder="jan@example.com" required>
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="contact-subject">Temat</label>
+                            <input type="text" id="contact-subject" placeholder="Pytanie o kurs">
+                        </div>
+                        <div class="contact-form-group">
+                            <label for="contact-message">Wiadomość</label>
+                            <textarea id="contact-message" placeholder="W czym możemy pomóc?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--cta" style="width: 100%; margin-top: 1rem;">Wyślij wiadomość 📩</button>
+                    </form>
+                </article>
+
+                <aside class="contact-details-list">
+                    <div class="card">
+                        <h3>Biuro Główne</h3>
+                        <div class="contact-item">ul. Kopernika 15, 00-001 Warszawa</div>
+                        <div class="contact-item">kontakt@akademia-astronomii.pl</div>
+                        <div class="contact-item">+48 22 123 45 67</div>
+                        <div class="contact-item">pon–pt 10–18, sob 10–14</div>
+                    </div>
+
+                    <div class="card" style="margin-top: 1.5rem;">
+                        <h3>Obserwatorium</h3>
+                        <div class="contact-item">Mazury, Jezioro Śniardwy</div>
+                        <div class="contact-item">obserwatorium@akademia-astronomii.pl</div>
+                        <img src="https://picsum.photos/seed/observatory/600/300" alt="Obserwatorium" class="contact-img">
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2>Znajdź nas na mapie</h2>
+            </div>
+            <div class="map-demo-container">
+                <div class="map-box-1">📍 <strong>Siedziba główna</strong> — Warszawa, Centrum (ul. Kopernika)</div>
+                <div class="map-box-2">🔭 <strong>Obserwatorium</strong> — 250km na północ (Mazury, Śniardwy)</div>
+                <div class="map-box-3">Mapa interaktywna: Wkrótce</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2>Dołącz do społeczności</h2>
+            </div>
+            <p class="social-promo-text">Odkrywaj kosmos razem z nami w sieci</p>
+            <div class="social-grid">
+                <div class="social-card" style="border-bottom: 3px solid #1877F2;">Facebook</div>
+                <div class="social-card" style="border-bottom: 3px solid #E4405F;">Instagram</div>
+                <div class="social-card" style="border-bottom: 3px solid #1DA1F2;">Twitter</div>
+                <div class="social-card" style="border-bottom: 3px solid #FF0000;">YouTube</div>
+            </div>
+        </section>
+
+        <section class="newsletter-banner">
+            <div>
+                🌟 Zapisz się do newslettera i odbierz darmowy e-book: <br>
+                <span style="color: var(--secondary-color)">„Przewodnik po nocnym niebie 2026"</span>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Akademia Astronomii</p>
-        <a href="index.html" style="color: var(--secondary-color);">Powrót do strony głównej</a>
+        <p>© 2026 Akademia Astronomii — wiedza o kosmosie dla każdego</p>
+        <div class="footer-links">
+            <a href="index.html">Strona Główna</a> · 
+            <a href="o-nas.html">O nas</a> · 
+            <a href="kursy.html">Kursy</a> · 
+            <a href="galeria.html">Galeria</a>
+        </div>
     </footer>
+
 </body>
 </html>
