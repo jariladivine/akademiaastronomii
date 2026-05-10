@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akademia Astronomii - odkryj tajemnice kosmosu. Kursy, artykuły i galeria zdjęć.">
     <title>Akademia Astronomii - Strona główna</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --primary-color: #6c5ce7;
-            --secondary-color: #00cec9;
-            --accent-color: #fd79a8;
-            --dark-bg: #1e1e2e;
-            --card-bg: #2a2a3e;
-            --text-color: #e0e0e0;
-            --text-muted: #a0a0b0;
+            --primary-color: #6c5ce7;      /* Fiolet */
+            --secondary-color: #00cec9;    /* Turkus */
+            --accent-color: #fd79a8;       /* Różowy */
+            --dark-bg: #1e1e2e;            /* Ciemne tło główne */
+            --card-bg: #2a2a3e;            /* Tło kart i sekcji */
+            --text-color: #e0e0e0;          /* Jasny tekst */
+            --text-muted: #a0a0b0;          /* Przygaszony tekst */
             --border-color: #3a3a4e;
-            --heading-color: #73C0F1;
+            --heading-color: #73C0F1;      /* Jasnoniebieski dla nagłówków */
             --font-size: 16px;
             --radius: 12px;
             --shadow: 0 4px 20px rgba(0,0,0,0.5);
             --transition-speed: 0.3s;
         }
 
-        /* --- RESET I BAZA --- */
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -36,14 +35,7 @@
             background-color: var(--dark-bg);
             color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden; /* Zapobiega przypadkowemu przewijaniu na boki */
-        }
-
-        /* Obrazy dopasowujące się do szerokości ekranu */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            overflow-x: hidden;
         }
 
         /* --- NAGŁÓWEK --- */
@@ -54,7 +46,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 5%;
+            padding: 0.8rem 10%;
             background: rgba(30, 30, 46, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
@@ -64,13 +56,13 @@
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--heading-color);
-            white-space: nowrap;
+            letter-spacing: 1px;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .nav-links a {
@@ -80,13 +72,21 @@
             padding: 0.4rem 0.8rem;
             border-radius: 6px;
             transition: all var(--transition-speed);
-            font-size: 0.95rem;
         }
 
         .nav-links a:hover, .nav-links a.active {
             background-color: var(--primary-color);
             color: #fff;
         }
+
+        /* --- TYPOGRAFIA --- */
+        h1, h2, h3, h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
 
         /* --- UKŁAD GŁÓWNY --- */
         main {
@@ -104,21 +104,44 @@
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
-      
-        /* --- RESPONSYWNA TABELA --- */
+
+        /* --- HERO --- */
+        .hero-box {
+            text-align: center; 
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius); 
+            color: #fff; 
+            margin-bottom: 3rem;
+        }
+
+        .hero-content h1 {
+            color: #e8e8e8;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* --- TABELA --- */
         .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin: 2rem 0;
             border-radius: var(--radius);
-            overflow-x: auto; /* Scroll poziomy na telefonach */
             border: 2px solid var(--heading-color);
             box-shadow: var(--shadow);
         }
 
         .styled-table {
+            min-width: 500px;
             width: 100%;
             border-collapse: collapse;
             background: var(--card-bg);
-            min-width: 500px; /* Zapobiega ściskaniu kolumn */
         }
 
         .styled-table th {
@@ -127,9 +150,17 @@
             padding: 1rem;
             text-align: left;
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        .styled-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); }
+        .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .styled-table tr:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
 
         /* --- SIATKA KART --- */
         .grid-container {
@@ -146,8 +177,18 @@
             transition: transform var(--transition-speed);
         }
 
-        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .card img { border-radius: 8px; margin-bottom: 1rem; width: 100%; height: 200px; object-fit: cover; }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
 
         /* --- PRZYCISKI --- */
         .btn {
@@ -161,43 +202,74 @@
             border: none;
             text-align: center;
         }
-        .btn--cta { background: var(--secondary-color); color: var(--dark-bg); }
-        .btn--more { background: var(--primary-color); color: #fff; margin-top: 1rem; }
-        .btn:hover { transform: scale(1.03); opacity: 0.9; }
 
-        /* --- ANIMACJE I DODATKI --- */
-        .banner-subtle {
+        .btn:hover {
+            transform: scale(1.03);
+        }
+
+        .btn--cta {
+            background: var(--secondary-color);
+            color: var(--dark-bg);
+        }
+
+        .btn--more {
+            background: var(--primary-color);
+            color: #fff;
+            margin-top: 1rem;
+        }
+
+        /* --- NOWY KURS (PRZYCISK Z PULSEM) --- */
+        .banner-btn {
+            display: block;
+            width: 100%;
             padding: 1.5rem;
             border-radius: var(--radius);
             color: #fff;
             text-align: center;
             font-weight: bold;
+            text-decoration: none;
             animation: bluePulse 4s infinite;
+            transition: transform var(--transition-speed), filter var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .banner-btn:hover {
+            transform: scale(1.01);
+            filter: brightness(1.1);
+            animation-play-state: paused;
         }
 
         @keyframes bluePulse {
-            0%, 100% { background-color: #1e1e2e; box-shadow: 0 0 0px rgba(88,166,255,0); }
-            50% { background-color: #1f6feb; box-shadow: 0 0 20px rgba(88,166,255,0.4); }
+            0% { background-color: #1e1e2e; box-shadow: 0 0 0px rgba(88, 166, 255, 0); }
+            50% { background-color: #1f6feb; box-shadow: 0 0 20px rgba(88, 166, 255, 0.4); }
+            100% { background-color: #1e1e2e; box-shadow: 0 0 0px rgba(88, 166, 255, 0); }
         }
 
+        /* --- INICJAŁ --- */
         .dropcap::first-letter {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: bold;
             color: var(--primary-color);
             float: left;
             margin-right: 12px;
-            line-height: 0.8;
+            line-height: 1;
         }
 
         /* --- NEWSLETTER --- */
         .form-container {
             background: var(--card-bg);
-            padding: clamp(1.5rem, 5vw, 3rem);
+            padding: 3rem;
             border-radius: var(--radius);
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
             border: 1px solid var(--border-color);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
         }
 
         .form-group input {
@@ -213,42 +285,75 @@
         }
 
         /* --- CYTAT --- */
-        .quote-section { position: relative; border-radius: var(--radius); overflow: hidden; height: 300px; }
-        .quote-section img { width: 100%; height: 100%; object-fit: cover; }
-        .quote-overlay {
-            position: absolute; inset: 0; background: rgba(0,0,0,0.6);
-            display: flex; justify-content: center; align-items: center; padding: 1.5rem;
+        .quote-section {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 300px;
         }
-        blockquote { color: #fff; font-size: clamp(1rem, 4vw, 1.4rem); text-align: center; font-style: italic; }
+
+        .quote-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quote-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        blockquote {
+            color: #fff;
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            font-weight: 600;
+            text-align: center;
+            font-style: italic;
+        }
 
         /* --- STOPKA --- */
         footer {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 3rem 1.5rem;
             background: var(--card-bg);
             border-top: 1px solid var(--border-color);
         }
-        .footer-links { margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .footer-links a { color: var(--heading-color); text-decoration: none; }
 
-        /* --- MEDIA QUERIES (RESPONSYWNOŚĆ) --- */
+        footer p { color: var(--text-muted); }
+
+        .footer-links { margin-top: 1rem; }
+
+        .footer-links a {
+            color: var(--heading-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* --- RESPONSYWNOŚĆ --- */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1rem; text-align: center; }
-            .nav-links { flex-wrap: wrap; justify-content: center; }
-            .nav-links a { font-size: 0.85rem; padding: 0.3rem 0.5rem; }
-            section { margin-bottom: 2.5rem; }
+            header { flex-direction: column; padding: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .form-container { padding: 1.5rem; }
+            .quote-section { height: 200px; }
         }
 
         @media (max-width: 480px) {
-            .hero-box { border-radius: 0; margin-left: -1.5rem; margin-right: -1.5rem; } /* Hero na całą szerokość na mobile */
-            .card { padding: 1rem; }
+            main { padding: 1rem 0.5rem; }
+            .grid-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="service-name">🔭 <span class="highlight">Akademia Astronomii</span></div>
+        <div class="service-name">🔭 Akademia Astronomii</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Strona Główna</a></li>
@@ -261,6 +366,7 @@
     </header>
 
     <main>
+        <!-- Sekcja Hero -->
         <section class="hero-box">
             <div class="hero-content">
                 <h1>Odkryj Tajemnice Kosmosu</h1>
@@ -269,6 +375,7 @@
             </div>
         </section>
 
+        <!-- Tabela wydarzeń -->
         <section aria-labelledby="events-title">
             <div class="section-header">
                 <h2 id="events-title">Nadchodzące wydarzenia</h2>
@@ -291,6 +398,7 @@
             </div>
         </section>
 
+        <!-- Siatka kart -->
         <section aria-labelledby="topics-title">
             <div class="section-header">
                 <h2 id="topics-title">Popularne tematy</h2>
@@ -299,7 +407,7 @@
                 <article class="card">
                     <img src="https://picsum.photos/seed/planets/600/400" alt="Planety">
                     <h3>Planety</h3>
-                    <p>Od Merkurego po lodowego Neptuna.</p>
+                    <p>Poznaj sekrety planet skalistych i gazowych olbrzymów.</p>
                     <a href="#" class="btn btn--more">Dowiedz się więcej</a>
                 </article>
                 <article class="card">
@@ -311,36 +419,40 @@
                 <article class="card">
                     <img src="https://picsum.photos/seed/galaxy/600/400" alt="Galaktyki">
                     <h3>Galaktyki</h3>
-                    <p>Poznaj strukturę kosmosu i czarne dziury.</p>
+                    <p>Poznaj strukturę kosmosu i potęgę czarnych dziur.</p>
                     <a href="#" class="btn btn--more">Dowiedz się więcej</a>
                 </article>
             </div>
         </section>
 
+        <!-- Informacja z inicjałem -->
         <section class="info-section">
             <div class="section-header"><h2>Czy wiesz, że...</h2></div>
-            <p class="dropcap">Światło ze Słońca potrzebuje około 8 minut i 20 sekund, aby dotrzeć do Ziemi. Patrzymy dosłownie w przeszłość wszechświata, widząc stan gwiazd sprzed wielu lat.</p>
+            <p class="dropcap">Światło ze Słońca potrzebuje około 8 minut i 20 sekund, aby dotrzeć do Ziemi. Patrzymy dosłownie w przeszłość wszechświata, widząc stan gwiazd sprzed wielu lat. Astronomia uczy nas pokory wobec ogromu czasu i przestrzeni.</p>
         </section>
 
+        <!-- Nowy kurs jako PRZYCISK -->
         <section>
-            <div class="banner-subtle">
-                🚀 Nowy kurs „Astrofotografia dla początkujących" już dostępny!
-            </div>
+            <a href="kursy.html" class="banner-btn">
+                🚀 Nowy kurs: „Astrofotografia dla początkujących" – Zapisz się już dziś!
+            </a>
         </section>
 
+        <!-- Cytat -->
         <section class="quote-section">
-            <img src="https://picsum.photos/seed/space/1100/450" alt="Ziemia widoczna z kosmosu">
+            <img src="https://picsum.photos/seed/space/1100/450" alt="Kosmos">
             <div class="quote-overlay">
                 <blockquote>„Ziemia to kolebka ludzkości, ale nie można wiecznie żyć w kolebce” — K. Ciołkowski</blockquote>
             </div>
         </section>
 
+        <!-- Newsletter -->
         <section aria-labelledby="newsletter-title">
             <div class="form-container">
                 <h2 id="newsletter-title">Bądź na bieżąco</h2>
                 <form id="newsletter-form">
                     <div class="form-group">
-                        <label for="email">Twój adres e-mail:</label><br><br>
+                        <label for="email">Twój adres e-mail:</label>
                         <input type="email" id="email" name="email" placeholder="adres@e-mail.pl" required>
                     </div>
                     <button type="submit" class="btn btn--cta">Zapisz się do Newslettera</button>
