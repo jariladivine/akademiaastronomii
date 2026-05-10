@@ -178,6 +178,7 @@
         /* --- TABELA --- */
         .table-wrapper {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin: 2rem 0;
             border-radius: var(--radius);
             border: 2px solid var(--heading-color);
@@ -187,6 +188,7 @@
             width: 100%;
             border-collapse: collapse;
             background: var(--card-bg);
+            min-width: 400px;
         }
 
         .styled-table th {
@@ -201,7 +203,7 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* --- STOPKA (Ujednolicona) --- */
+        /* --- STOPKA --- */
         footer {
             text-align: center;
             padding: 3rem 1.5rem;
@@ -232,8 +234,17 @@
         /* --- RESPONSYWNOŚĆ --- */
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 1rem; }
-            .nav-links { margin-top: 1rem; gap: 0.5rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 1rem; gap: 0.5rem; }
+            .nav-links a { font-size: 0.9rem; padding: 0.3rem 0.6rem; }
+            .hero-box { padding: 2.5rem 1rem; }
+            .hero-box h1 { font-size: 1.8rem; }
             .team-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            main { padding: 1rem 0.8rem; }
+            .team-photo { width: 120px; height: 120px; }
+            .styled-table { font-size: 0.85rem; }
         }
     </style>
 </head>
